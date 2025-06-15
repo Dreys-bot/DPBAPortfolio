@@ -1,0 +1,122 @@
+---
+import ColoredText from './ColoredText.astro';
+import Button from './ui/Button.astro';
+import ProgressBar from './ui/ProgressBar.astro';
+
+export interface AboutType {
+  label?: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  downloadLink: string;
+  stats: { value: string; label: string; borderColor: string }[];
+  skills: { name: string; percentage: number }[];
+  description: string[];
+}
+
+const aboutData: AboutType = {
+  label: 'About',
+  title: 'The Mind Behind The Code',
+  subtitle: 'AI-Focused Full-Stack Architect & Technical Problem Solver',
+  image: '/img/about.jpg',
+  downloadLink: 'https://drive.google.com/file/d/1azmxE1JRK--RQ_uVWUggTmnLPW5ZGuf1/view?usp=sharing',
+  stats: [
+    { value: '2+', label: 'Years Experience', borderColor: 'neon-purple' },
+    { value: '20+', label: 'Projects Completed', borderColor: 'neon-cyan' },
+  ],
+  skills: [
+    { name: 'Machine Learning', percentage: 95 },
+    { name: 'Natural Language Processing', percentage: 90 },
+    { name: 'Computer Vision & Deep Learning', percentage: 85 },
+    { name: 'MLOps', percentage: 80 },
+  ],
+  description: [
+    'I’m DJOUPE Audrey, a senior full-stack developer with a strong focus on artificial intelligence and intelligent system design. I build scalable, end-to-end digital solutions that seamlessly integrate advanced AI capabilities into modern web and mobile applications.',
+
+    'With expertise ranging from front-end interfaces to robust back-end infrastructure, and hands-on experience in deploying machine learning models, vector search, LLM orchestration, and data pipelines, I help companies turn raw data and ambitious ideas into real-world, AI-powered products.',
+    
+  ],
+};
+---
+
+<section id="about" class="py-20 lg:py-24 relative overflow-hidden">
+  <div class="absolute inset-0 cyber-grid opacity-20"></div>
+  <div
+    class="absolute top-0 right-0 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl"
+  ></div>
+
+  <div class="max-w-7xl mx-auto px-4 relative">
+    <div class="mb-16 text-center">
+      <span class="text-neon-cyan font-code uppercase">//{aboutData.label}</span>
+      <h2 class="text-4xl md:text-5xl font-bold mt-2">
+        <ColoredText text={aboutData.title} />
+      </h2>
+      <div class="h-1 w-24 bg-neon-purple mx-auto mt-4"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <div class="relative p-8 lg:p-12 max-lg:mb-6">
+          <div
+            class="border border-neon-cyan rounded-lg overflow-hidden shadow-lg shadow-neon-cyan/20"
+          >
+            <img
+              src={aboutData.image}
+              alt={aboutData.title}
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          {aboutData.stats.map((stat, index) => (
+            <div
+              class={`absolute ${index === 0 ? 'top-0 right-1 md:right-0' : 'bottom-0 left-1 md:left-0'} bg-dark-space p-4 border rounded-lg shadow-lg ${stat.borderColor === 'neon-cyan' ? 'border-neon-cyan' : 'border-neon-purple'}`}
+            >
+              <div class={`${stat.borderColor === 'neon-cyan' ? 'text-neon-cyan' : 'text-neon-purple'} text-4xl font-bold`}>
+                {stat.value}
+              </div>
+              <div class="text-gray-400 text-sm">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold"><ColoredText text={aboutData.subtitle} /></h3>
+        {aboutData.description.map((para) => (
+          <p class="text-gray-300">{para}</p>
+        ))}
+        <div class="space-y-4 pt-4">
+          {aboutData.skills.map((skill) => (
+            <ProgressBar name={skill.name} percentage={skill.percentage} />
+          ))}
+        </div>
+        <div class="pt-4">
+          <Button 
+            variant="outline"
+            color="cyan"
+            link={true}
+            download={true}
+            href={aboutData.downloadLink}
+          >
+            Download Resume
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-download"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
+                />
+                <path
+                  d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
+                />
+              </svg>
+          </Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

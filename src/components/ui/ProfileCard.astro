@@ -1,0 +1,83 @@
+---
+interface Props {
+  image: string;
+  name: string;
+  title: string;
+  class?: string;
+}
+
+const { image, name, title, class: className } = Astro.props;
+---
+
+<div
+  class:list={[
+    'cyber-border rounded-lg p-1 bg-dark-space/80 backdrop-blur-md',
+    className,
+  ]}
+>
+  <div
+    class="h-96 w-full bg-gradient-to-br from-dark-space via-dark-space to-neon-purple/20 rounded overflow-hidden relative"
+  >
+    <!-- Pulse -->
+    <div
+      class="absolute top-4 right-4 h-2 w-2 bg-neon-cyan rounded-full animate-pulse"
+    ></div>
+    <div
+      class="absolute bottom-4 left-4 h-2 w-2 bg-neon-purple rounded-full animate-pulse"
+      style="animation-delay: 0.5s"
+    ></div>
+
+    <!-- Code snippets background -->
+    <div class="absolute inset-0 opacity-30">
+        <div class="font-code text-xs p-4 text-white">
+        <div class="mb-2 text-gray-500">&lt;!-- {name} --&gt;</div>
+        <div class="mb-2 text-neon-purple">&lt;div <span class="text-lime-300">class=</span><span class="text-yellow-300">"developer-mode"</span>&gt;</div>
+        <div class="pl-6 mb-2">
+            <span class="text-blue-400">const</span> <span class="text-white">startWebsite</span> = () <span class="text-pink-400">&rarr;</span> <span class="text-yellow-300">&#123;</span>
+        </div>
+        <div class="pl-12 mb-2">
+            <span class="text-blue-400">let</span> <span class="text-white">idea</span> = <span class="text-green-400">"🚀 Launching innovation"</span>;
+        </div>
+        <div class="pl-12 mb-2">
+            <span class="text-blue-400">const</span> <span class="text-white">tools</span> = <span class="text-green-400">["HTML", "CSS", "JavaScript", "React"]</span>;
+        </div>
+        <div class="pl-12 mb-2">
+            <span class="text-blue-400">const</span> <span class="text-white">mission</span> = <span class="text-green-400">"Craft seamless experiences"</span>;
+        </div>
+        <div class="pl-12 mb-2"></div>
+        <div class="pl-12 mb-2">
+            <span class="text-blue-400">const</span> <span class="text-white">build</span> = (<span class="text-white">tools, mission</span>) <span class="text-pink-400">&rarr;</span> <span class="text-yellow-300">&#123;</span>
+        </div>
+        <div class="pl-20 mb-2">
+            <span class="text-blue-400">return</span> <span class="text-white">tools</span>.map(<span class="text-white">tool</span> <span class="text-pink-400">&rarr;</span> <span class="text-white">tool</span> + <span class="text-green-400">" + "</span> + <span class="text-white">mission</span>);
+        </div>
+        <div class="pl-12 mb-2 text-yellow-300">&#125;;</div>
+        <div class="pl-12 mb-2"></div>
+        <div class="pl-12 mb-2">
+            <span class="text-blue-400">return</span> <span class="text-white">build</span>(<span class="text-white">tools, mission</span>);
+        </div>
+        <div class="pl-6 mb-2 text-yellow-300">&#125;;</div>
+        <div class="mb-2 text-neon-purple">&lt;/div&gt;</div>
+        </div>
+    </div>
+
+    <!-- Profile -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center">
+        <div
+          class="w-32 h-32 mx-auto rounded-full border-2 border-neon-cyan mb-4 overflow-hidden"
+        >
+          <img
+            src={image}
+            alt={name}
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="text-neon-cyan font-code text-xl uppercase">
+          {name}
+        </div>
+        <div class="text-gray-200">{title}</div>
+      </div>
+    </div>
+  </div>
+</div>

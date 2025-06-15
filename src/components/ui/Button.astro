@@ -1,0 +1,65 @@
+---
+interface Props {
+  variant: 'filled' | 'outline' | 'soft';
+  color: 'purple' | 'cyan';
+  class?: string;
+  link?: boolean;
+  href?: string;
+  smooth?: boolean;
+  download?: boolean;
+  submit?: boolean;
+}
+
+const {
+  variant,
+  color,
+  class: className,
+  link = false,
+  href = '#',
+  smooth = false,
+  download = false,
+  submit = false,
+} = Astro.props;
+
+const baseClasses =
+  'inline-flex items-center justify-center gap-2 px-6 py-3 font-bold rounded transition duration-300';
+
+const variantClasses = {
+  filled: {
+    purple:
+      'bg-neon-purple hover:bg-neon-purple/80 text-white shadow-lg shadow-neon-purple/20',
+    cyan: 'bg-neon-cyan hover:bg-neon-cyan/80 text-black shadow-lg shadow-neon-cyan/20',
+  },
+  outline: {
+    purple:
+      'border border-neon-purple text-neon-purple hover:bg-neon-purple/10',
+    cyan: 'border border-neon-cyan text-neon-cyan hover:bg-neon-cyan/10',
+  },
+  soft: {
+    purple:
+      'text-white hover:text-neon-cyan bg-neon-purple/20 hover:bg-neon-purple/40 border border-neon-purple',
+    cyan: 'text-white hover:text-black bg-neon-cyan/20 hover:bg-neon-cyan/40 border border-neon-cyan',
+  },
+};
+---
+
+{
+  link ? (
+    <a
+      href={href}
+      class:list={[baseClasses, variantClasses[variant][color], className]}
+      {...(smooth ? { 'data-type': 'smooth' } : {})}
+      {...(download ? { download: true } : {})}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button
+      class:list={[baseClasses, variantClasses[variant][color], className]}
+      {...(smooth ? { 'data-type': 'smooth' } : {})}
+      {...(submit ? { type: 'submit' } : {})}
+    >
+      <slot />
+    </button>
+  )
+}

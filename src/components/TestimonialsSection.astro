@@ -1,0 +1,109 @@
+---
+import ColoredText from './ColoredText.astro';
+import TestimonialCard from './ui/TestimonialCard.astro';
+
+export interface HeadingType {
+  subtitle: string;
+  title: string;
+  highlight: string;
+  description: string;
+  highlightColor: string;
+}
+export interface TestimonialType {
+  quote: string;
+  author: string;
+  title: string;
+  image: string;
+  borderColor: 'neon-cyan' | 'neon-purple';
+}
+
+const headingData: HeadingType = {
+  subtitle: '//TESTIMONIALS',
+  title: 'Voices of Satisfaction',
+  highlight: 'Satisfaction',
+  description: 'Hear from clients who have experienced the impact of my innovative digital solutions.',
+  highlightColor: 'neon-cyan',
+};
+const testimonialsData: TestimonialType[] = [
+  {
+    quote:
+      "I would like to congratulate Audrey on her excellent work in our SogetiLabs research and innovation team. She has demonstrated a remarkable ability to develop federated AI models and image processing and data analysis. She has the ability to work on innovative elements, is serious and collaborates well with the team.",
+    author: 'Dr. Azade Fotouhi',
+    title: 'AI Project Lead',
+    image: '/img/female1.jpeg',
+    borderColor: 'neon-cyan',
+  },
+  {
+    quote:
+      "Bernadette Audrey is an incredible developer. Her specialties are data science and AI, but beyond that, I offered her a Blockchain challenge (a tech she didn't know anything about yet). She only needed a few hours to get up to speed, then finished the project in the allotted time with clinical precision... I recommend her.",
+    author: 'Pierre-Emmanuel Giuglaris',
+    title: 'Chief of Staff & Change Management',
+    image: '/img/male1.jpeg',
+    borderColor: 'neon-purple',
+  },
+  {
+    quote:
+      "She demonstrates a strong commitment to her work, consistently delivering high-quality results with professionalism and reliability. Her dedication is evident in the way she takes initiative, meets deadlines, and goes beyond expectations. I highly recommend her for any project or role requiring a motivated and dependable contributor.",
+    author: 'Chekam Bigong',
+    title: 'Designer XR',
+    image: '/img/female2.jpeg',
+    borderColor: 'neon-cyan',
+  },
+];
+---
+
+<section
+  id="testimonials"
+  class="py-20 lg:pt-24 lg:pb-20 relative overflow-hidden"
+>
+  <div class="absolute inset-0 cyber-grid opacity-20"></div>
+  <div
+    class="absolute bottom-0 right-0 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl"
+  ></div>
+
+  <div class="max-w-7xl mx-auto px-4 relative">
+    <div class="mb-16 text-center">
+      <span class="text-neon-cyan font-code">{headingData.subtitle}</span>
+      <h2 class="text-4xl md:text-5xl font-bold mt-2">
+        <ColoredText text={headingData.title} wordsPerColor={1} />
+      </h2>
+      <div class="h-1 w-24 bg-neon-purple mx-auto mt-4"></div>
+      <p class="text-gray-300 max-w-3xl mx-auto mt-6">{headingData.description}</p>
+    </div>
+
+    <div id="testimonials-slider" class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {testimonialsData.map((testimonial) => (
+            <li class="splide__slide">
+              <TestimonialCard
+                quote={testimonial.quote}
+                author={testimonial.author}
+                title={testimonial.title}
+                image={testimonial.image}
+                borderColor={testimonial.borderColor}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    import Splide from '@splidejs/splide';
+    document.addEventListener('DOMContentLoaded', () => {
+      new Splide('#testimonials-slider', {
+        type: 'loop',
+        perPage: 2,
+        perMove: 1,
+        gap: '2rem',
+        autoplay: true,
+        interval: 5000,
+        breakpoints: {
+          768: { perPage: 1 },
+        },
+      }).mount();
+    });
+  </script>
+</section>

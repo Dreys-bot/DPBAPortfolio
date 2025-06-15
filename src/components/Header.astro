@@ -1,0 +1,116 @@
+---
+import Logo from "./ui/Logo.astro";
+
+export interface NavItemType {
+  label: string;
+  href: string;
+  isButton?: boolean;
+}
+
+const navItems: NavItemType[] = [
+  { label: '_HOME', href: '/' },
+  { label: '_ABOUT', href: '/about' },
+  { label: '_SERVICES', href: '/services' },
+  { label: '_PROJECTS', href: '/projects' },
+  { label: '_BLOGS', href: '/blogs' },
+  { label: '_CONTACT', href: '/contact', isButton: true },
+];
+
+// current path
+const currentPath = Astro.url.pathname;
+---
+
+<header 
+  class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-dark-space/80 border-b border-neon-cyan/30"
+  x-data="{ navOpen: false }"
+>
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between h-16">
+      <Logo />
+
+      <!-- Desktop Menu -->
+      <nav class="hidden lg:flex items-center space-x-8">
+        {navItems.map((item) => {
+          const isActive = currentPath === item.href;
+          return (
+            <a
+              href={item.href}
+              class:list={[
+                // Base classes
+                "transition-colors duration-300",
+                // Active state
+                isActive ? "text-neon-cyan" : "text-white hover:text-neon-cyan",
+                // Button styling
+                item.isButton && [
+                  "inline-flex items-center justify-center px-4 py-2 rounded border border-neon-purple",
+                  isActive 
+                    ? "bg-neon-purple/40" 
+                    : "bg-neon-purple/20 hover:bg-neon-purple/40"
+                ]
+              ]}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </nav>
+
+      <!-- Mobile menu button -->
+      <div class="lg:hidden flex items-center">
+        <button
+          @click="navOpen = !navOpen"
+          class="text-neon-cyan focus:outline-none"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    x-show="navOpen"
+    class="lg:hidden bg-dark-space/95 backdrop-blur-md border-b border-neon-cyan/30"
+    style="display: none;"
+    x-cloak
+  >
+    <div class="max-w-7xl mx-auto px-4 space-y-1 pb-6">
+      {navItems.map((item) => {
+        const isActive = currentPath === item.href;
+        return (
+          <a
+            x-on:click="navOpen = false"
+            href={item.href}
+            class:list={[
+              // Base classes
+              "flex items-center px-3 py-2 transition-colors duration-300",
+              // Active state
+              isActive ? "text-neon-cyan" : "text-white hover:text-neon-cyan",
+              // Button styling
+              item.isButton && [
+                "mt-3 justify-center rounded border border-neon-purple",
+                isActive 
+                  ? "bg-neon-purple/40" 
+                  : "bg-neon-purple/20 hover:bg-neon-purple/40"
+              ]
+            ]}
+          >
+            {item.label}
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</header>

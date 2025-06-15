@@ -1,0 +1,509 @@
+---
+import ColoredText from './ColoredText.astro';
+import Button from './ui/Button.astro';
+
+export interface HeadingType {
+  subtitle: string;
+  title: string;
+  highlight: string;
+  description: string;
+  highlightColor: string;
+}
+export interface ProjectType {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
+  alt: string;
+  description: string;
+  modalDescription: string;
+  technologies: string[];
+  features: string[];
+  projectLink: string;
+  badge?: string;
+  badgeColor: string;
+  borderColor: string;
+  images: string[];
+}
+
+const headingData: HeadingType = {
+  subtitle: '//PORTFOLIO',
+  title: 'Crafted Innovations',
+  highlight: 'Innovations',
+  description: 'Discover a collection of projects that fuse futuristic design, advanced technology, and seamless functionality.',
+  highlightColor: 'neon-cyan',
+};
+const projectsData: ProjectType[] = [
+  {
+    id: 1,
+    title: 'Federated Learning - Healthcare',
+    category: 'Deep Learning',
+    image: 'img/project1.jpg',
+    alt: 'NeuroVerse Screenshot',
+    description:
+      'Designed a federated learning pipeline for disease prediction.',
+    modalDescription:
+      'Designed a federated learning pipeline applied to hospital data, enabling powerful AI model development for disease prediction while ensuring data privacy and security across multiple hospitals',
+    technologies: ['python', 'pytorch', 'Tensorflow', 'Azure'],
+    features: [
+      'Radiographic image preprocessing and augmentation pipeline',
+      'Distributed training of CNN models on local hospital nodes',
+      'Model deployment and serving using Azure ML endpoints',
+    ],
+    projectLink: 'https://drive.google.com/file/d/1UVXc2wnHb1Roj3v9Shk0-m6C0xF7Iacv/view',
+    badge: 'Featured',
+    badgeColor: 'neon-cyan',
+    borderColor: 'neon-cyan',
+    images: ['/img/fd2.jpeg', '/img/fd3.png'],
+  },
+  {
+    id: 2,
+    title: 'Age, Gender & Emotion Detection System',
+    category: 'Computer Vision',
+    image: 'img/project2.jpg',
+    alt: 'Synthia Screenshot',
+    description:
+      'Real-time embedded AI solution',
+    modalDescription:
+      'Developed a real-time embedded AI solution for TotalEnergies to detect customer age, gender, and emotions from video streams. The system integrated three optimized AI models and enabled dynamic statistics generation.',
+    technologies: ['Tensorflow', 'OpenCV', 'Python'],
+    features: [
+      'Real-time face detection and tracking from video streams',
+      'Parallel inference using multi-threaded execution of 3 AI models',
+      'Using Lite finuting models for detection',
+    ],
+    projectLink: 'https://github.com/yourusername/emotion-detection',
+    badge: '',
+    badgeColor: 'neon-cyan',
+    borderColor: 'neon-purple',
+    images: ['/img/PJ2.jpg', '/img/PJ3.jpg'],
+  },
+  {
+    id: 3,
+    title: 'Company chatbot',
+    category: 'AI Generative',
+    image: 'img/project3.png',
+    alt: 'Quantum Gallery Screenshot',
+    description:
+      'Build a custom intelligent chatbot with advanced large language models (LLMs)',
+    modalDescription:
+      'Designed and implemented a custom intelligent chatbot leveraging advanced large language models (LLMs) such as LLaMA and DeepSeek. Integrated Retrieval-Augmented Generation (RAG) to provide contextualized responses based on internal company documentation, enabling accurate, domain-specific knowledge access.',
+    technologies: ['LLM', 'RAG', 'Vector Database', 'NLP', 'FAISS', 'SQL', 'python'],
+    features: [
+      'Document ingestion pipeline with semantic chunking and embedding',
+      'Vector-based retrieval using FAISS and custom ranking logic',
+      'LLM integration with LLaMA and DeepSeek for scalable inference',
+      'End-to-end chatbot interface built with Flask, HTML, CSS, and JS'
+    ],
+    projectLink: '#',
+    badge: '',
+    badgeColor: 'neon-cyan',
+    borderColor: 'neon-cyan',
+    images: [],
+  },
+  {
+    id: 4,
+    title: 'Financial Advisory Chatbot',
+    category: 'AI Generative',
+    image: 'img/project4.jpg',
+    alt: 'CodeMind Screenshot',
+    description:
+      'Advanced AI coding assistant that understands context and suggests optimal solutions.',
+    modalDescription:
+      'An advanced AI coding assistant that understands project context, suggests optimal solutions, and learns from your financial strategies. We can upload pdf to extract informations and finetune AI models',
+    technologies: ['LLM', 'VPS', 'Docker', 'RAG', 'Vector Database', 'NLP', 'FAISS', 'SQL', 'python'],
+    features: [
+      'RAG-enabled question answering from vectorized knowledge base',
+      'PDF ingestion with information extraction for domain adaptation',
+      'Finetuning AI models for financial strategies of company'
+    ],
+    projectLink: '#',
+    badge: 'New',
+    badgeColor: 'neon-cyan',
+    borderColor: 'neon-purple',
+    images: ['/img/Chat2.jpg', '/img/chat3.jpg'],
+  },
+  {
+    id: 5,
+    title: 'Neural Style Transfert',
+    category: 'Deep Learning',
+    image: 'img/project5.gif',
+    alt: 'CyberMart Screenshot',
+    description:
+      'Neural Style Transfert on an image.',
+    modalDescription:
+      'Implementation of the Neural Style Transfer technique, a fascinating deep learning algorithm that combines the content of one image with the style of another image. By leveraging convolutional neural networks, this project enables you to create unique and visually appealing artworks that merge the content and style of different images.',
+    technologies: ['python', 'VGG', 'Flask'],
+    features: [
+      'Content and style image upload via web interface',
+      'Real-time style transfer visualization in Flask app',
+      'Use of pre-trained VGG19 for feature extraction',
+    ],
+    projectLink: 'https://github.com/Dreys-bot/Neural-Style-Transfert',
+    badge: '',
+    badgeColor: 'neon-cyan',
+    borderColor: 'neon-cyan',
+    images: [],
+  },
+  {
+    id: 6,
+    title: 'Dance Step Classifier',
+    category: 'Deep Learning',
+    image: 'img/project6.gif',
+    alt: 'NeonCity Screenshot',
+    description:
+      'Developed a machine learning model to classify dance steps',
+    modalDescription:
+      'Developed a machine learning model to classify dance steps based on motion data. The system processes time-series input (such as pose estimations or accelerometer data) to detect and label specific choreographed movements. Leveraging techniques like feature extraction, sequence modeling (using LSTM/GRU), and supervised classification, the model provides accurate, real-time feedback on user performance. The pipeline includes data preprocessing, model training, and deployment in a lightweight interface for use in dance learning applications or motion recognition systems.',
+    technologies: ['pose estimation', 'tensorflow', 'pytorch', 'Python', 'html/css', 'alphaPose'],
+    features: [
+      'Real-time dance step recognition from pose sequences',
+      'Pose data extraction using AlphaPose',
+      'Sequence modeling with LSTM and GRU architectures',
+      'Interactive web interface for visualizing classified steps',
+    ],
+    projectLink: 'https://github.com/Dreys-bot/choreAI',
+    badge: '',
+    badgeColor: 'neon-cyan',
+    borderColor: 'neon-purple',
+    images: [],
+  },
+  {
+    id: 7,
+    title: 'Data Reporting Project',
+    category: 'Data Engineering',
+    image: 'img/project7.png',
+    alt: 'NeonCity Screenshot',
+    description:
+      'Built a data reporting pipeline on Microsoft Azure',
+    modalDescription:
+      'Built a data reporting pipeline on Microsoft Azure simulating a real-world workflow. Integrated on-premise data with Azure Data Factory, Data Lake Gen2, Databricks, Synapse, and Power BI. Implemented bronze-silver-gold data transformation with versioned storage and secure access via Azure Key Vault and Entra ID. Final Power BI dashboards displayed daily refreshed KPIs based on business context.',
+    technologies: ['Azure Data Factory', 'Azure Data Lake Gen2', 'Power BI', 'Azure Databricks', 'Azure Synapse Analytics'],
+    features: [
+      'Ingestion of on-premise data using Azure Data Factory',
+      'ETL processing and transformation with Databricks notebooks',
+      'Bronze-Silver-Gold data lake architecture implementation',
+      'Dynamic Power BI dashboards and secure credential management with Azure Key Vault',
+    ],
+    projectLink: 'https://github.com/Dreys-bot/3DVAEGAN/tree/main',
+    badge: '',
+    badgeColor: 'neon-cyan',
+    borderColor: 'neon-purple',
+    images: [],
+  },
+  {
+    id: 8,
+    title: 'Generate 3D object',
+    category: '3D',
+    image: 'img/project8.png',
+    alt: 'NeonCity Screenshot',
+    description:
+      'Built a 3D object generation pipeline',
+    modalDescription:
+      'Implemented a 3D object generation pipeline using a 3D VAE-GAN architecture, trained on the 3DShapeNets dataset. The model learns to generate realistic 3D voxel-based shapes by combining variational encoding and adversarial learning. More technical details are available in the attached PDF in the repository.',
+    technologies: ['GAN', 'Processing 3D voxels objects', 'VAE encoder for GAN model'],
+    features: [
+      'Training on 3D voxel data from the 3DShapeNets dataset',
+      'Adversarial training with 3D convolutional discriminator',
+      'Visualization of generated 3D objects using voxel renderers',
+    ],
+    projectLink: 'https://github.com/Dreys-bot/Azure-Data-Engineering-project',
+    badge: '',
+    badgeColor: 'neon-cyan',
+    borderColor: 'neon-purple',
+    images: [],
+  }
+];
+---
+
+<section id="projects" class="py-24 relative overflow-hidden">
+  <div class="absolute inset-0 cyber-grid opacity-20"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl"></div>
+
+  <div 
+    class="max-w-7xl mx-auto px-4 relative"
+    x-data={`{
+      filter: 'all',
+      activeProject: null,
+      selectedImage: null,
+      projects: ${JSON.stringify(projectsData)},
+      openModal(projectId) {
+        this.activeProject = projectId;
+        const project = this.projects.find(p => p.id === projectId);
+        this.selectedImage = project ? project.image : null;
+        document.body.classList.add('overflow-hidden');
+      },
+      closeModal() {
+        this.activeProject = null;
+        this.selectedImage = null;
+        document.body.classList.remove('overflow-hidden');
+      },
+      filteredProjects() {
+        return this.filter === 'all' 
+          ? this.projects 
+          : this.projects.filter(p => p.category === this.filter);
+      },
+      getProject(id) {
+        return this.projects.find(p => p.id === id);
+      }
+    }`}
+  >
+    <div class="mb-16 text-center">
+      <span class="text-neon-cyan font-code">{headingData.subtitle}</span>
+      <h2 class="text-4xl md:text-5xl font-bold mt-2">
+        <ColoredText text={headingData.title} wordsPerColor={1} />
+      </h2>
+      <div class="h-1 w-24 bg-neon-purple mx-auto mt-4"></div>
+      <p class="text-gray-300 max-w-3xl mx-auto mt-6">{headingData.description}</p>
+    </div>
+
+    <!-- Project Filter -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+      <button
+        x-on:click="filter = 'all'"
+        class="px-5 py-2 max-sm:text-sm max-sm:py-1.5 max-sm:px-4 rounded-full border transition-all duration-300"
+        x-bind:class="{
+          'bg-neon-cyan/20 border-neon-cyan text-neon-cyan': filter === 'all',
+          'border-gray-600 text-gray-400 hover:border-neon-cyan/50 hover:text-neon-cyan/70': filter !== 'all'
+        }"
+      >
+        All
+      </button>
+      <template x-for="category in [...new Set(projects.map(p => p.category))]" :key="category">
+        <button
+          x-on:click="filter = category"
+          class="px-5 py-2 max-sm:text-sm max-sm:py-1.5 max-sm:px-4 rounded-full border transition-all duration-300"
+          x-bind:class="{
+            'bg-neon-cyan/20 border-neon-cyan text-neon-cyan': filter === category,
+            'border-gray-600 text-gray-400 hover:border-neon-cyan/50 hover:text-neon-cyan/70': filter !== category
+          }"
+        >
+          <span class="capitalize" x-text="category"></span>
+        </button>
+      </template>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <template x-for="project in filteredProjects()" :key="project.id">
+        <div
+          x-show="true"
+          x-transition:enter="transition ease-out duration-500"
+          x-transition:enter-start="opacity-0 translate-y-10"
+          x-transition:enter-end="opacity-100 translate-y-0"
+          class="group relative"
+          x-data="{ hover: false }"
+        >
+          <div
+            class="overflow-hidden rounded-lg border bg-dark-space/80 backdrop-blur-md transition-all duration-500 hover:shadow-lg"
+            x-bind:class="`border-${project.borderColor}/30 hover:border-${project.borderColor} hover:shadow-${project.borderColor}/30`"
+            x-on:mouseenter="hover = true"
+            x-on:mouseleave="hover = false"
+          >
+            <div
+              x-on:click="openModal(project.id)"
+              class="relative aspect-video cursor-pointer"
+            >
+              <img
+                :src="project.image"
+                :alt="project.alt"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div
+                x-show="hover"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                class="absolute inset-0 bg-gradient-to-t from-dark-space via-dark-space/70 to-transparent flex flex-col justify-end p-6"
+              >
+                <h3 class="text-xl font-bold text-neon-cyan mb-2" x-text="project.title"></h3>
+                <p class="text-gray-300 mb-4 text-sm" x-text="project.description"></p>
+                <div class="flex flex-wrap gap-2">
+                  <template x-for="tech in project.technologies" :key="tech">
+                    <span
+                      class="text-xs px-2 py-1 rounded-full border"
+                      x-bind:class="`bg-${project.badgeColor}/20 text-${project.badgeColor} border-${project.badgeColor}/50`"
+                      x-text="tech"
+                    ></span>
+                  </template>
+                </div>
+              </div>
+              <div
+                x-show="project.badge"
+                class="absolute top-4 right-4 bg-dark-space/90 rounded-full px-3 py-1 text-xs border border-neon-cyan text-neon-cyan"
+                x-text="project.badge"
+              ></div>
+            </div>
+          </div>
+          <div class="flex justify-between mt-4">
+            <a
+              :href="project.projectLink"
+              target="_blank"
+              class="transition-colors duration-300 text-sm font-bold flex items-center hover:opacity-80"
+              x-bind:class="`text-${project.borderColor}`"
+            >
+              View Project
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 ml-1"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <button
+              x-on:click="openModal(project.id)"
+              class="text-gray-400 hover:text-neon-purple transition-colors duration-300 text-sm font-bold flex items-center"
+            >
+              Details
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 ml-1"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9a1 1 0 00-1-1H9z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <!-- Project Modal -->
+    <div
+      x-show="activeProject !== null"
+      x-cloak
+      class="fixed inset-0 z-50 overflow-y-auto"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+      style="display:none;"
+    >
+      <div class="flex items-center justify-center min-h-screen px-4 text-center sm:p-0">
+        <div
+          x-on:click="closeModal()"
+          x-show="activeProject !== null"
+          x-transition:enter="ease-out duration-300"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="ease-in duration-200"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="fixed inset-0 bg-dark-space/80 transition-opacity"
+          aria-hidden="true"
+        ></div>
+        <div
+          x-show="activeProject !== null"
+          x-transition:enter="ease-out duration-300"
+          x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+          x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+          x-transition:leave="ease-in duration-200"
+          x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+          x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+          class="inline-block w-full max-w-[98%] sm:max-w-4xl my-8 rounded-lg text-left overflow-hidden transform transition-all backdrop-blur-xl border border-neon-cyan/30"
+        >
+          <div class="relative bg-dark-space/95 px-4 sm:px-6 pt-5 pb-4 sm:pb-6 max-h-[90vh] overflow-y-auto scrollbars">
+            <div class="relative" x-data="currentProject = getProject(activeProject)">
+              <div class="mt-3 sm:mt-0 text-left w-full">
+                <template x-if="currentProject = getProject(activeProject)">
+                  <div>
+                    <h3 
+                      class="text-xl sm:text-2xl font-bold mb-4"
+                      x-bind:class="`text-${currentProject.borderColor}`"
+                      x-text="currentProject.title"
+                    ></h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                      <div>
+                        <img
+                          :src="selectedImage || currentProject.image"
+                          :alt="currentProject.alt"
+                          class="rounded-lg border w-full h-auto object-cover"
+                          x-bind:class="`border-${currentProject.borderColor}/30`"
+                        />
+                        <div class="grid grid-cols-4 gap-2 sm:gap-3 mt-4">
+                          <img
+                            x-on:click="selectedImage = currentProject.image"
+                            :src="currentProject.image"
+                            alt="Default Screenshot"
+                            class="rounded border w-full h-auto object-cover cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                            x-bind:class="`border-${currentProject.borderColor}/30`"
+                          />
+                          <template x-for="(thumb, index) in currentProject.images" :key="index">
+                            <img
+                              x-on:click="selectedImage = thumb"
+                              :src="thumb"
+                              :alt="`Screenshot ${index + 1}`"
+                              class="rounded border w-full h-auto object-cover cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                              x-bind:class="`border-${currentProject.borderColor}/30`"
+                            />
+                          </template>
+                        </div>
+                      </div>
+                      <div class="space-y-4 sm:space-y-6">
+                        <p class="text-gray-300 text-sm sm:text-base" x-text="currentProject.modalDescription"></p>
+                        <div class="space-y-2">
+                          <h4 class="text-neon-purple font-bold text-base sm:text-lg">Technologies</h4>
+                          <div class="flex flex-wrap gap-2">
+                            <template x-for="tech in currentProject.technologies" :key="tech">
+                              <span
+                                class="text-xs px-2 py-1 rounded-full border"
+                                x-bind:class="`bg-${currentProject.badgeColor}/20 text-${currentProject.badgeColor} border-${currentProject.badgeColor}/50`"
+                                x-text="tech"
+                              ></span>
+                            </template>
+                          </div>
+                        </div>
+                        <div>
+                          <h4 class="text-neon-purple font-bold text-base sm:text-lg">Features</h4>
+                          <ul class="text-gray-300 list-disc list-inside text-sm sm:text-base">
+                            <template x-for="feature in currentProject.features" :key="feature">
+                              <li x-text="feature"></li>
+                            </template>
+                          </ul>
+                        </div>
+                        <a
+                          :href="currentProject.projectLink"
+                          target="_blank"
+                          class="inline-block px-4 py-1.5 rounded transition duration-300 text-sm sm:text-base border"
+                          x-bind:class="`bg-${currentProject.badgeColor}/20 text-${currentProject.badgeColor} border-${currentProject.badgeColor} hover:bg-${currentProject.badgeColor}/30`"
+                        >
+                          Visit Project
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+              </div>
+              <!-- Close Button -->
+              <div class="absolute -end-4 -top-4">
+                <button
+                  x-on:click="closeModal()"
+                  class="size-8 text-sm flex items-center justify-center bg-dark-space border border-neon-purple text-neon-purple hover:bg-neon-purple/10 rounded-full transition duration-300"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load More Button -->
+    <div class="text-center mt-12">
+      <Button variant='outline' color='cyan'>
+        LOAD MORE PROJECTS
+      </Button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+---
+import FeatureCard from "./ui/FeatureCard.astro";
+
+export interface PhilosophyItemType {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  iconColor: 'neon-cyan' | 'neon-purple';
+}
+
+const philosophyData: PhilosophyItemType[] = [
+  {
+    id: 'innovation',
+    title: 'Innovation First',
+    description:
+      "I harness the power of emerging technologies to design forward-thinking solutions that shape tomorrow's world.",
+    icon: 'innovation',
+    iconColor: 'neon-cyan',
+  },
+  {
+    id: 'user-centric',
+    title: 'User-Centric Design',
+    description:
+      'Every pixel and every algorithm is thoughtfully designed to deliver intuitive, immersive, and meaningful user experiences.',
+    icon: 'user-centric',
+    iconColor: 'neon-purple',
+  },
+  {
+    id: 'precision',
+    title: 'Relentless Precision',
+    description:
+      'I strive for excellence in every detail—building robust, scalable, and high-performance systems that stand the test of time.',
+    icon: 'precision',
+    iconColor: 'neon-cyan',
+  },
+];
+
+const sectionLabel = '// MY PHILOSOPHY';
+const sectionTitle = 'Crafting the <span class="text-neon-cyan neon-text">Future</span> with Purpose';
+---
+
+<section class="pb-20 lg:pb-24 relative overflow-hidden">
+  <div class="absolute inset-0 cyber-grid opacity-20"></div>
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="mb-12 text-center">
+      <span class="text-neon-purple font-code">{sectionLabel}</span>
+      <h3 class="text-3xl md:text-4xl font-bold mt-2" set:html={sectionTitle} />
+      <div class="h-1 w-24 bg-neon-cyan mx-auto mt-4"></div>
+    </div>
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+      {philosophyData.map((item) => (
+        <FeatureCard
+          title={item.title}
+          description={item.description}
+          icon={item.icon}
+          iconColor={item.iconColor}
+        />
+      ))}
+    </div>
+  </div>
+</section>

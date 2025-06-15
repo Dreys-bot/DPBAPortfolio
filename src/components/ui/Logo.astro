@@ -1,0 +1,14 @@
+---
+interface Props {
+  href?: string;
+  class?: string;
+}
+
+const { href = '/', class: className } = Astro.props;
+---
+
+<a href={href} class:list={['flex items-center', className]}>
+  <div class="text-xl font-bold text-neon-cyan neon-text">
+    DPBA<span class="text-neon-purple neon-purple-text">DEV</span>
+  </div>
+</a>

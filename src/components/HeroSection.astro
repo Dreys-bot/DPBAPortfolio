@@ -1,0 +1,100 @@
+---
+import ColoredText from './ColoredText.astro';
+import ProfileCard from './ui/ProfileCard.astro';
+import Button from './ui/Button.astro';
+
+export interface HeroType {
+  label: string;
+  title: string;
+  subtitle: string;
+  cta: { label: string; href: string; variant: 'filled' | 'outline' | 'soft'; color: 'purple' | 'cyan' }[];
+  profile: { name: string; title: string; image: string };
+  techStack: string[];
+}
+
+const heroData: HeroType = {
+  label: 'Full Stack Data Scientist',
+  title: 'AI Software Development for the World',
+  subtitle:
+    'Transforming industries with intelligent automation, advanced analytics, and cutting-edge AI technologies tailored to your business needs.',
+  cta: [
+    {
+      label: 'Initiate Contact',
+      href: '#contact',
+      variant: 'filled',
+      color: 'purple',
+    },
+    {
+      label: 'View Projects',
+      href: '#projects',
+      variant: 'outline',
+      color: 'cyan',
+    },
+  ],
+  profile: {
+    name: 'DJOUPE Audrey',
+    title: 'Data Scientist',
+    image: '/img/hero.jpg',
+  },
+  techStack: ['Computer V.', 'ML', 'NLP', 'DL'],
+};
+---
+
+<section id="hero" class="lg:min-h-screen pt-32 pb-24 flex items-center relative overflow-hidden cyber-grid">
+  <div class="absolute inset-0 bg-dark-space/30"></div>
+  <div class="absolute top-0 left-0 w-full h-full">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-neon-purple/20 blur-3xl"></div>
+    <div class="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-neon-cyan/10 blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-8 items-center">
+      <div class="flex flex-col gap-6">
+        <div class="font-code text-neon-cyan">
+          <span class="inline-block border border-neon-cyan/50 px-3 py-1 rounded-full text-sm uppercase">{heroData.label}</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-wide pe-12">
+          <ColoredText text={heroData.title} class="max-lg:block" />
+        </h1>
+        <p class="text-xl text-gray-300 mb-6">{heroData.subtitle}</p>
+        <div class="flex flex-col sm:flex-row gap-4 xl:gap-6">
+          {heroData.cta.map((button) => (
+            <Button
+              variant={button.variant}
+              color={button.color}
+              link={true}
+              href={button.href}
+              smooth={true}
+            >
+              {button.label}
+            </Button>
+          ))}
+        </div>
+      </div>
+
+      <div class="relative">
+        <ProfileCard
+          name={heroData.profile.name}
+          title={heroData.profile.title}
+          image={heroData.profile.image}
+        />
+
+        <!-- Tech stack icons -->
+        <div
+          class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 bg-dark-space/90 px-6 py-2 rounded-full border border-neon-cyan/30 backdrop-blur"
+        >
+          {heroData.techStack.map((tech, index) => (
+            <span class="flex items-center gap-2">
+              <span class={index % 2 === 0 ? 'text-neon-cyan' : 'text-neon-purple'}>
+                {tech}
+              </span>
+              {index < heroData.techStack.length - 1 && (
+                <span class="text-gray-500"> | </span>
+              )}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
