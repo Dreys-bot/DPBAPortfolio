@@ -26,7 +26,7 @@ export const blogItems: BlogItem[] = [
   {
     id: 'webgl',
     slug: 'transformers',
-    image: '/img/CNNTrans/Transformers.jpg',
+    image: '../img/CNNTrans/Transformers.jpg',
     alt: 'WebGL Blog',
     tag: 'AI',
     date: 'march 25, 2025',
@@ -276,7 +276,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '/img/hero.jpg',
+      image: '../img/hero.jpg',
       alt: 'Mark Thomson',
     },
     relatedArticles: [{ id: '3d' }, { id: 'ar' }],
@@ -284,7 +284,7 @@ export const blogItems: BlogItem[] = [
   {
     id: 'ai',
     slug: 'rnn',
-    image: '/img/CNNTrans/blog2.jpg',
+    image: '../img/CNNTrans/blog2.jpg',
     alt: 'AI Blog',
     tag: 'AI',
     date: 'March 12, 2025',
@@ -594,7 +594,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '/img/hero.jpg',
+      image: '../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'webgl' }, { id: 'ar' }],
@@ -602,7 +602,7 @@ export const blogItems: BlogItem[] = [
   {
     id: 'serverless',
     slug: 'cnn2',
-    image: '/img/CNNTrans/cnnspart1.jpg',
+    image: '../img/CNNTrans/cnnspart1.jpg',
     alt: 'Serverless Blog',
     tag: 'AI',
     date: 'Mar 01, 2025',
@@ -907,7 +907,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '/img/hero.jpg',
+      image: '../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'ai' }, { id: 'microservices' }],
@@ -915,7 +915,7 @@ export const blogItems: BlogItem[] = [
   {
     id: 'ar',
     slug: 'cnn1',
-    image: '/img/CNNTrans/cnnspart1.jpg',
+    image: '../img/CNNTrans/cnnspart1.jpg',
     alt: 'AR Commerce Blog',
     tag: 'AI',
     date: 'Feb 20, 2025',
@@ -1073,7 +1073,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '/img/hero.jpg',
+      image: '../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'webgl' }, { id: '3d' }],
@@ -1081,7 +1081,7 @@ export const blogItems: BlogItem[] = [
   {
     id: 'microservices',
     slug: 'risecnn',
-    image: '/img/CNNTrans/cnn.jpeg',
+    image: '../img/CNNTrans/cnn.jpeg',
     alt: 'Microservices Blog',
     tag: 'AI',
     date: 'Feb 18, 2025',
@@ -1179,7 +1179,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '/img/hero.jpg',
+      image: '../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'serverless' }, { id: 'ai' }],
@@ -1187,7 +1187,7 @@ export const blogItems: BlogItem[] = [
   {
     id: 'microservices',
     slug: 'hfl',
-    image: '/img/Federated/HFL_cover.png',
+    image: '../img/Federated/HFL_cover.png',
     alt: 'Microservices Blog',
     tag: 'AI',
     date: 'March 03, 2024',
@@ -1384,7 +1384,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '/img/hero.jpg',
+      image: '../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'serverless' }, { id: 'ai' }],
@@ -1392,7 +1392,7 @@ export const blogItems: BlogItem[] = [
   {
     id: 'microservices',
     slug: 'fl',
-    image: '/img/Federated/work_FL.png',
+    image: '../img/Federated/work_FL.png',
     alt: 'Microservices Blog',
     tag: 'AI',
     date: 'Feb 15, 2024',
@@ -1540,7 +1540,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '/img/hero.jpg',
+      image: '../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'serverless' }, { id: 'ai' }],
@@ -1548,7 +1548,7 @@ export const blogItems: BlogItem[] = [
   {
     id: 'microservices',
     slug: '3d',
-    image: '/img/3D/index.jpg',
+    image: '../img/3D/index.jpg',
     alt: 'Microservices Blog',
     tag: 'AI',
     date: 'Dec 04, 2023',
@@ -1721,7 +1721,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '/img/hero.jpg',
+      image: '../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'serverless' }, { id: 'ai' }],
@@ -1729,7 +1729,7 @@ export const blogItems: BlogItem[] = [
   {
     id: 'microservices',
     slug: 'TransformerNLP',
-    image: '/img/transformer/index.jpg',
+    image: '../img/transformer/index.jpg',
     alt: 'Microservices Blog',
     tag: 'AI',
     date: 'Oct 06, 2023',
@@ -2052,7 +2052,7 @@ There are many ways to encode the positions of tokens. For example, we could imp
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '/img/hero.jpg',
+      image: '../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'serverless' }, { id: 'ai' }],
@@ -2060,7 +2060,7 @@ There are many ways to encode the positions of tokens. For example, we could imp
   {
     id: 'microservices',
     slug: 'NeuralStyle',
-    image: '/img/NeuralStyleTrans/index.jpg',
+    image: '../img/NeuralStyleTrans/index.jpg',
     alt: 'Microservices Blog',
     tag: 'AI',
     date: 'Sep 03, 2023',
@@ -2164,7 +2164,7 @@ There are many ways to encode the positions of tokens. For example, we could imp
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '/img/hero.jpg',
+      image: '../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'serverless' }, { id: 'ai' }],

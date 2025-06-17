@@ -10,8 +10,8 @@ export interface NavItemType {
 const navItems: NavItemType[] = [
   { label: '_HOME', href: `${import.meta.env.BASE_URL}` },
   { label: '_ABOUT', href: `${import.meta.env.BASE_URL}about` },
-  { label: '_SERVICES', href: '#services' },
-  { label: '_PROJECTS', href: '#projects' },
+  { label: '_SERVICES', href: `${import.meta.env.BASE_URL}services` },
+  { label: '_PROJECTS', href: `${import.meta.env.BASE_URL}projects` },
   { label: '_BLOGS', href: `${import.meta.env.BASE_URL}blogs` },
   { label: '_CONTACT', href: `${import.meta.env.BASE_URL}contact`, isButton: true },
 ];
