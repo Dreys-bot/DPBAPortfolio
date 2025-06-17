@@ -1,14 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches: [main]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
+    branches: [ main ]
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
@@ -18,29 +14,33 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout your repository using git
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Version d'Node.js plus récente
-          
+          node-version: 20
+
       - name: Install system dependencies
         run: sudo apt-get install -y librsvg2-dev libvips-dev
 
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: npm install -g pnpm@8  # <- Version stable sans bugs connus
+
+      - name: Configure pnpm to allow scripts
+        run: pnpm set config ignore-scripts false
 
       - name: Install project dependencies
-        run: pnpm install --no-frozen-lockfile --ignore-scripts --merge-git-branch-lockfiles
+        run: |
+          pnpm config set store-dir ~/.pnpm-store
+          pnpm install --no-frozen-lockfile
 
-      - name: Rebuild sharp
-        run: pnpm rebuild sharp 
-      - name: Build with Astro
-        uses: withastro/action@v2
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
         with:
           package-manager: pnpm@latest
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
