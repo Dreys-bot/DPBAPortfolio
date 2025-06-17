@@ -36,8 +36,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile --ignore-scripts --merge-git-branch-lockfiles
 
       - name: Rebuild sharp
-        run: pnpm rebuild sharp --platform=linuxmusl --arch=x64
-
+        run: pnpm rebuild sharp 
       - name: Build with Astro
         uses: withastro/action@v2
         with:
