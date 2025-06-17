@@ -26,7 +26,7 @@ export const blogItems: BlogItem[] = [
   {
     id: 'webgl',
     slug: 'transformers',
-    image: '../img/CNNTrans/Transformers.jpg',
+    image: '../../img/CNNTrans/Transformers.jpg',
     alt: 'WebGL Blog',
     tag: 'AI',
     date: 'march 25, 2025',
@@ -63,10 +63,10 @@ export const blogItems: BlogItem[] = [
       <p>In reality, both the <strong>encoder</strong> and <strong>decoder</strong> are made up of multiple stacked layers, all with the same structure. Each <strong>encoder layer</strong> processes the input and passes it to the next one. On the <strong>decoder</strong> side, each layer takes input from both the last <strong>encoder layer</strong> and the previous <strong>decoder layer</strong>.</p>
       <p>In the original <strong>Transformer</strong> model, there were 6 layers for the <strong>encoder</strong> and 6 layers for the <strong>decoder</strong>, but this number (N) can be adjusted as needed.</p>
       <p>Now that we have a general idea of the Transformer architecture, let’s dive deeper into how the encoders and decoders work.</p>
-      <p><img src="../public/img/CNNTrans/encDecWorflow.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
+      <p><img src="../../img/CNNTrans/encDecWorflow.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
 
       <h2><strong>Encoder Workflow</strong></h2>
-      <p><img src="../public/img/CNNTrans/encworkflow.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
+      <p><img src="../../img/CNNTrans/encworkflow.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
       <p><strong>Transformers</strong> are currently the basis for many advances in <strong>natural language processing (NLP)</strong>. They have enabled models such as <strong>BERT</strong>, <strong>GPT</strong>, and <strong>T5</strong> to achieve impressive results. At the heart of these models is the <strong>Transformer encoder</strong>, which transforms input data (such as sentences) into <strong>machine-readable information</strong>.</p>
 
       <p>In this section, we will simply explain the key elements that make up this encoder: <strong>embeddings</strong> (which transform words into numbers), <strong>positional coding</strong> (which indicates word order), <strong>self-attention</strong> (which allows the model to know which words are important), <strong>normalization</strong> and <strong>residual connections</strong> (which help stabilize learning), and finally the <strong>feed-forward layer</strong> (which processes the information before moving on to the next step).</p>
@@ -85,9 +85,9 @@ export const blogItems: BlogItem[] = [
           <li><strong>The size of each vector is always the same</strong>: in basic Transformers, each vector has 512 dimensions (that is, 512 numbers inside, regardless of the word).</li>
       </ul>
 
-      <p><img src="../public/img/CNNTrans/encworkflowinput.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
+      <p><img src="../../img/CNNTrans/encworkflowinput.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
       <h3>2. Positional Encoding</h3>
-      <img src="../public/img/CNNTrans/positionalenc.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+      <img src="../../img/CNNTrans/positionalenc.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
       <p>Transformers, the artificial intelligence models revolutionizing language processing, have a unique characteristic: unlike their predecessors like recurrent neural networks (RNNs), they don’t process the words of a sentence one by one. Instead, they analyze all the words simultaneously, which allows them to be much faster.</p>
 
       <p>However, this approach poses a problem: how can the model understand the order of the words? After all, the meaning of a sentence crucially depends on the order in which the words are placed. For example, “The cat sleeps on the mat” has a very different meaning from “The mat sleeps on the cat!” Without information about the order, the Transformer could confuse these two sentences.</p>
@@ -116,7 +116,7 @@ export const blogItems: BlogItem[] = [
       </ul>
 
       <h3>3. Stack of Encoder Layers</h3>
-      <img src="../public/img/CNNTrans/stackenc.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+      <img src="../../img/CNNTrans/stackenc.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
       <p>Each <strong>encoder layer</strong> contains:</p>
 
       <p>a) <strong>Multi-Head Self-Attention</strong>:<br>
@@ -136,7 +136,7 @@ export const blogItems: BlogItem[] = [
       <p>It’s as if several people were looking at the same sentence but from different perspectives: some will focus on the grammar, others on the tone or the cause-and-effect relationships.</p>
 
       <p>b) <strong>Normalization and Residual Connections</strong>:<br>
-      <img src="../public/img/CNNTrans/normaworkflow.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></p>
+      <img src="../../img/CNNTrans/normaworkflow.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></p>
       <p>Once the encoder has completed the self-attention phase (where the words have looked at the other words to capture the context), we don’t move directly to the next step. Before that, two important operations are performed:</p>
 
       <p>— <strong>The residual connection (or “shortcut”)</strong><br>
@@ -156,7 +156,7 @@ export const blogItems: BlogItem[] = [
 
 
       <p>c) <strong>Feed-Forward Neural Network</strong>:<br>
-      <img src="../public/img/CNNTrans/feedforward.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></p>
+      <img src="../../img/CNNTrans/feedforward.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></p>
       <p>After the information passes through self-attention and the residual connection, it enters a new phase called the feed-forward neural network. Here’s how it works:</p>
       <p><strong>Information Transformation:</strong><br>
       The information first goes through a series of two simple transformations, called linear layers. These layers modify the information, kind of like changing its shape.</p>
@@ -177,7 +177,7 @@ export const blogItems: BlogItem[] = [
 
 
       <h2><strong>Decoder Workflow</strong></h2>
-      <img src="../public/img/CNNTrans/decoderworkflow.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+      <img src="../../img/CNNTrans/decoderworkflow.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
       <p>At the heart of the Transformer model lies the decoder, whose mission is to generate coherent text sequences. Like the encoder, it is made up of several sub-layers, including multi-head attention mechanisms, neural networks, and normalization techniques. These components work together to decode the information prepared by the encoder and produce intelligible text.</p>
 
@@ -201,7 +201,7 @@ export const blogItems: BlogItem[] = [
       <p>We want to train a model for translate englsh sentence to french. During training, the complete French sentence is already available (because it’s part of the data the model needs to learn). But to prevent the decoder from “cheating” by looking at future words during training, we use a mask in the self-attention process. This mask is like a filter that prevents the model from seeing subsequent words in the sentence while it learns to make predictions.</p>
 
       <p>a) <strong>Masked Self-Attention</strong>:<br>
-      <img src="../public/img/CNNTrans/multiatten.jpg" alt="architecture"><br>
+      <img src="../../img/CNNTrans/multiatten.jpg" alt="architecture"><br>
       🔍 <strong>Role during training:</strong><br>
       When the decoder learns to generate the French sentence, it must only use the words already generated (on the left) and not see future words (on the right).</p>
       <p>➡️ <strong>Concrete example:</strong><br>
@@ -255,7 +255,7 @@ export const blogItems: BlogItem[] = [
       <li><strong>Selecting the final word:</strong><br>The model picks the word with the highest probability (e.g., “sat” at 65%).<br>This word becomes the newly generated word, and will be used as input for the next step to predict the following word.<br><strong>Simple analogy:</strong><br>It’s like playing a guessing game with multiple choices:<br>You look at all the possible options (all 10,000 words),<br>You think: “Hmm… 65% chance it’s ‘sat,’ 20% for ‘jumped’…”<br>Then you choose the most likely answer.</li>
       </ul>
 
-      <img src="../public/img/CNNTrans/transoutput.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+      <img src="../../img/CNNTrans/transoutput.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
       <h2>Why Transformers Changed Everything ?</h2>
 
@@ -338,10 +338,10 @@ export const blogItems: BlogItem[] = [
         <li>They allow processing of sequential data such as text, audio, or time series, by exploiting their <strong>temporal structure</strong>.</li>
     </ul>
 
-    <img src="../public/img/CNNTrans/archiRnn.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:70%; height:auto;">
+    <img src="../../img/CNNTrans/archiRnn.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:70%; height:auto;">
 
     <h3>Principal components of RNNs</h3>
-    <img src="../public/img/CNNTrans/rnncom.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+    <img src="../../img/CNNTrans/rnncom.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
     <h4>a) Input Layer</h4>
     <p>The input layer of an RNN processes each element of the sequence (like a word in a sentence) by transforming it into a <strong>dense vector representation</strong> via <strong>embedding vectors</strong>. These embeddings, often pre-trained (like Word2Vec, GloVe, or BERT), are crucial because they:</p>
@@ -450,11 +450,11 @@ export const blogItems: BlogItem[] = [
     <p>where:<br>
     - w: <strong>Weight</strong> (determines the input's influence).<br>
     - b: <strong>Bias</strong> (offsets the prediction).</p>
-    <img src="../public/img/CNNTrans/onetoone.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+    <img src="../../img/CNNTrans/onetoone.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
 
     <h3>One-to-Many Architecture</h3>
-    <img src="../public/img/CNNTrans/onetomany.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+    <img src="../../img/CNNTrans/onetomany.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
     <p>The <strong>One-to-Many</strong> architecture is designed for scenarios where a single input generates a sequence of outputs. It excels in tasks requiring the transformation of a single data point into a structured, multi-step result.</p>
 
     <p><strong>How Does It Work?</strong></p>
@@ -487,7 +487,7 @@ export const blogItems: BlogItem[] = [
 
 
     <h3>Many-to-One Architecture</h3>
-    <img src="../public/img/CNNTrans/manytomany.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+    <img src="../../img/CNNTrans/manytomany.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
     <p>In <strong>RNNs</strong>, the <strong>Many-to-One (N:1)</strong> architecture transforms a sequence of inputs into a single output. It is used to synthesize a sequence into a global value or category, such as:</p>
     <ul>
@@ -501,7 +501,7 @@ export const blogItems: BlogItem[] = [
     <p><strong>Example</strong>: Sentiment analysis of the sentence "I loved this movie!"</p>
 
     <p><strong>Sequential Inputs</strong>:</p>
-    <img src="../public/img/CNNTrans/seqinput.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+    <img src="../../img/CNNTrans/seqinput.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
     <p><strong>Detailed Propagation:</strong></p>
     <ol>
@@ -527,7 +527,7 @@ export const blogItems: BlogItem[] = [
 
 
     <h3>Many-to-Many Architecture</h3>
-    <img src="../public/img/CNNTrans/manytomany1.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+    <img src="../../img/CNNTrans/manytomany1.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
     <p>This architecture handles sequences where input and output lengths differ. It is split into two specialized components: an <strong>encoder</strong> and a <strong>decoder</strong>, enabling tasks like translation or text generation.</p>
     <p>This architecture handles input and output sequences of different lengths.</p>
 
@@ -618,7 +618,7 @@ export const blogItems: BlogItem[] = [
       <h3>Sigmoid Function</h3>
       <p>The sigmoid function is one of the most well-known activation functions in artificial intelligence and machine learning. It is defined by the following equation:</p>
 
-      <img src="../public/img/CNNTrans/form1.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
+      <img src="../../img/CNNTrans/form1.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
 
       <p>This function transforms any input value into a number between <strong>0 and 1</strong>. Thanks to this property, it is often used to represent probabilities, making it an excellent choice for <strong>binary classification problems</strong>.</p>
 
@@ -633,7 +633,7 @@ export const blogItems: BlogItem[] = [
       <h3>Tanh Function</h3>
       <p>The <strong>Tanh function</strong> (or Hyperbolic Tangent) is an <strong>activation function</strong> used in neural networks. It transforms an input value into a number between <strong>-1 and 1</strong>.</p>
       <p>Here is its mathematical formula:</p>
-      <img src="../public/img/CNNTrans/form2.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
+      <img src="../../img/CNNTrans/form2.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
 
       <p>This means that, no matter the value of x, the output of the function will always be between <strong>-1 and 1</strong>.</p>
 
@@ -652,7 +652,7 @@ export const blogItems: BlogItem[] = [
       <h3>ReLU function</h3>
       <p>The <strong>ReLU</strong> (Rectified Linear Unit) function is one of the most widely used activation function in deep learning. It is mathematically defined as:</p>
 
-      <img src="../public/img/CNNTrans/form3.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
+      <img src="../../img/CNNTrans/form3.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
 
       <p>This means that:</p>
       <ul>
@@ -695,7 +695,7 @@ export const blogItems: BlogItem[] = [
           <li>For <strong>predicting continuous values</strong> (e.g., estimating a price), we use <strong>Mean Squared Error (MSE)</strong>.</li>
       </ul>
       <p>📌 <strong>Mathematical Example of Cross-Entropy Loss:</strong></p>
-      <img src="../public/img/CNNTrans/form3.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
+      <img src="../../img/CNNTrans/form3.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
       <p>where:</p>
       <ul>
           <li><code>y<sub>i</sub></code> is the true class label (e.g., “dog” or “cat”).</li>
@@ -710,7 +710,7 @@ export const blogItems: BlogItem[] = [
       <p><strong>What is a Gradient?</strong><br>
       A <strong>gradient</strong> is a mathematical measure that tells us <strong>how much and in which direction a value should change</strong>. In our case, it measures <strong>how the loss function changes with respect to each weight in the network</strong>.</p>
       <p>📌 <strong>Mathematically, we compute the partial derivative of the loss function with respect to each weight:</strong></p> 
-      <img src="../public/img/CNNTrans/form4.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
+      <img src="../../img/CNNTrans/form4.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
       
 
       <p>📌 <strong>How do we interpret this?</strong></p>
@@ -741,7 +741,7 @@ export const blogItems: BlogItem[] = [
       <p>By using the chain rule, we can combine these effects to calculate the impact of each weight on the final error.</p>
       <p><strong>Simple Chain Rule Formula:</strong></p>
 
-      <img src="../public/img/CNNTrans/form5.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
+      <img src="../../img/CNNTrans/form5.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
 
       <p>This means:</p>
       <ul>
@@ -770,9 +770,9 @@ export const blogItems: BlogItem[] = [
 
       <p><strong>Example with the Sigmoid Function</strong><br>
       The Sigmoid function is defined as:</p>
-      <img src="../public/img/CNNTrans/form6.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:25%; height:auto;">
+      <img src="../../img/CNNTrans/form6.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:25%; height:auto;">
       <p>Its derivative is:</p>
-      <img src="../public/img/CNNTrans/form7.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
+      <img src="../../img/CNNTrans/form7.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
       <p>👉 When x is very large or very small, f(x) becomes close to 1 or 0, and its derivative approaches zero.</p>
       <p>In a <strong>deep network</strong>, the gradient is computed layer by layer, multiplying these derivatives at each step.</p>
       <ul>
@@ -811,7 +811,7 @@ export const blogItems: BlogItem[] = [
       <li>✅ <strong>Increase model robustness</strong> against minor variations in an image (noise, shifts, and transformations).</li>
       </ul>
 
-      <img src="../public/img/CNNTrans/matrixConv.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
+      <img src="../../img/CNNTrans/matrixConv.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:30%; height:auto;">
 
       <h5>How Does Pooling Work?</h5>
       <p>Pooling is a crucial step in convolutional neural networks (CNNs) used to reduce the size of data (images or feature maps) while retaining the most important information. Here’s how it works:</p>
@@ -983,21 +983,21 @@ export const blogItems: BlogItem[] = [
     <ul>
       <li><strong>Edge detection filters</strong> (Sobel, Prewitt, Laplacian): Highlight <strong>sudden changes in brightness</strong>, making the edges of objects more visible.</li>
     </ul>
-    <img src="../public/img/CNNTrans/grayeffect.jpg" alt="Edge detection with Sobel filter" />
+    <img src="../../img/CNNTrans/grayeffect.jpg" alt="Edge detection with Sobel filter" />
 
     <ul>
       <li><strong>Blurring filter (Gaussian Blur)</strong>: Applies a weighted average to smooth an image and reduce noise.</li>
     </ul>
-    <img src="../public/img/CNNTrans/blurring.jpg" alt="Gaussian blur application" />
+    <img src="../../img/CNNTrans/blurring.jpg" alt="Gaussian blur application" />
 
     <ul>
       <li><strong>Sharpening filter</strong>: Enhances edges and improves image sharpness.</li>
     </ul>
-    <img src="../public/img/CNNTrans/sharpening.jpg" alt="Sharpen filter application" />
+    <img src="../../img/CNNTrans/sharpening.jpg" alt="Sharpen filter application" />
 
     <h4>2️⃣ Applying the Filter to the Image (Convolution Operation)</h4>
 
-    <img src="../public/img/CNNTrans/filterapply.gif" alt="Filter application example" />
+    <img src="../../img/CNNTrans/filterapply.gif" alt="Filter application example" />
 
     <ul>
       <li>The <strong>filter</strong> is applied to a specific region of the image.</li>
@@ -1013,7 +1013,7 @@ export const blogItems: BlogItem[] = [
     <p>The convolution on an image <em>I</em> with a filter <em>K</em> is expressed as:</p>
 
     <div class="equation">
-      <img src="../public/img/CNNTrans/form8.jpg" alt="Filter application example" />
+      <img src="../../img/CNNTrans/form8.jpg" alt="Filter application example" />
     </div>
 
     <ul>
@@ -1209,13 +1209,13 @@ export const blogItems: BlogItem[] = [
 
     <p>Among various types of federated learning methods, horizontal federated learning (HFL) is the best-studied category and handles homogeneous feature spaces. The figure shows a typical cross-device FL scenario where a multitude of user devices are coordinated by a central server(at the edge or on the cloud). This article aims to show how horizontal federated learning can be applied to a dataset. I conducted experiments on various cases using CIFAR10 datasets and demonstrated that HFL can achieve excellent performance while ensuring the confidentiality of our data, making it a valuable tool for boosting model performance.</p>
 
-    <img src="../public/img/Federated/HFL_global.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+    <img src="../../img/Federated/HFL_global.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
     <h1>Architecture of HFL</h1>
 
     <p>Horizontal federated learning was designed for training on distributed datasets that typically share the same feature space whilst having little or non overlap in terms of their data instances. It refers to building a model in the scenario where datasets have significant overlaps on the feature spaces($X_1$, $X_2$, ....) but not on the ID spaces. The figure below show you a guidebook of HFL.</p>
 
-    <img src="../public/img/Federated/HFL.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+    <img src="../../img/Federated/HFL.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
     <p>The standard process of FL is organised in rounds. After initialisation, each round is comprised of the following steps (the figure below show an illustration of this):</p>
 
@@ -1229,7 +1229,7 @@ export const blogItems: BlogItem[] = [
 
     <p>The process repeats for a preset number of rounds or until the global model attains the desired level of quality (judged from the loss or accuracy in evaluations).</p>
 
-    <img src="../public/img/Federated/HFL_architecture.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+    <img src="../../img/Federated/HFL_architecture.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
     <h1>Experimental methodology</h1>
 
@@ -1253,11 +1253,11 @@ export const blogItems: BlogItem[] = [
 
     <p>CIFAR-10 data is often used to train and evaluate image classification models, such as convolutional neural networks (CNN). These data are popular for classification tasks due to their diversity, complexity, and relatively small size. Model performance is typically evaluated in terms of classification accuracy on the test batch.</p>
 
-    <img src="../public/img/Federated/cifar10.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+    <img src="../../img/Federated/cifar10.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
     <h3>Aggregation functions</h3>
 
-    <img src="../public/img/Federated/functions.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+    <img src="../../img/Federated/functions.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
     <h3>Evaluation of aggregate functions</h3>
 
@@ -1268,11 +1268,11 @@ export const blogItems: BlogItem[] = [
     <p>By performing these tests, we aim to identify the aggregation function best suited to our specific use case. We seek to maximize the accuracies obtained while minimizing the loss of the federated model. By analyzing the results obtained, we will be able to determine which aggregation function offers the best performance in our particular context.</p>
 
     <ul>
-      <li>Federated learning on 3 clients <img src="../public/img/Federated/FL_3.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></li>
-      <li>Federated learning on 5 clients <img src="../public/img/Federated/FL_5.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></li>
-      <li>Federated learning on 20 clients <img src="../public/img/Federated/FL_20.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></li>
-      <li>Federated learning on 50 clients <img src="../public/img/Federated/FL_50.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></li>
-      <li>Federated learning on 100 clients <img src="../public/img/Federated/FL_100.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></li>
+      <li>Federated learning on 3 clients <img src="../../img/Federated/FL_3.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></li>
+      <li>Federated learning on 5 clients <img src="../../img/Federated/FL_5.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></li>
+      <li>Federated learning on 20 clients <img src="../../img/Federated/FL_20.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></li>
+      <li>Federated learning on 50 clients <img src="../../img/Federated/FL_50.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></li>
+      <li>Federated learning on 100 clients <img src="../../img/Federated/FL_100.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></li>
     </ul>
 
     <h3>Results analysis of tests</h3>
@@ -1329,13 +1329,13 @@ export const blogItems: BlogItem[] = [
     <ul>
       <li>Variation of learning rate<br>
         <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-          <img src="../public/img/Federated/CNN_lr_acc.png" alt="architecture" style="max-width:45%; height:auto;">
-          <img src="../public/img/Federated/CNN_lr_loss.png" alt="architecture" style="max-width:45%; height:auto;">
+          <img src="../../img/Federated/CNN_lr_acc.png" alt="architecture" style="max-width:45%; height:auto;">
+          <img src="../../img/Federated/CNN_lr_loss.png" alt="architecture" style="max-width:45%; height:auto;">
         </div>
       </li>
 
       <li>Variation of decay<br>
-        <img src="../public/img/Federated/CNN_decay_acc.png" alt="architecture" style="display: block; margin: 0 auto; max-width:45%; height:auto;">
+        <img src="../../img/Federated/CNN_decay_acc.png" alt="architecture" style="display: block; margin: 0 auto; max-width:45%; height:auto;">
       </li>
     </ul>
 
@@ -1344,14 +1344,14 @@ export const blogItems: BlogItem[] = [
     <ul>
       <li>Variation of learning rate<br>
         <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-          <img src="../public/img/Federated/Eff_lr_acc.png" alt="architecture" style="max-width:45%; height:auto;">
-          <img src="../public/img/Federated/Eff_lr_loss.png" alt="architecture" style="max-width:45%; height:auto;">
+          <img src="../../img/Federated/Eff_lr_acc.png" alt="architecture" style="max-width:45%; height:auto;">
+          <img src="../../img/Federated/Eff_lr_loss.png" alt="architecture" style="max-width:45%; height:auto;">
         </div>
       </li>
       <li>Variation of decay<br>
         <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-          <img src="../public/img/Federated/Eff_decay_acc.png" alt="architecture" style="max-width:45%; height:auto;">
-          <img src="../public/img/Federated/Eff_decay_loss.png" alt="architecture" style="max-width:45%; height:auto;">
+          <img src="../../img/Federated/Eff_decay_acc.png" alt="architecture" style="max-width:45%; height:auto;">
+          <img src="../../img/Federated/Eff_decay_loss.png" alt="architecture" style="max-width:45%; height:auto;">
         </div>
       </li>
     </ul>
@@ -1437,7 +1437,7 @@ export const blogItems: BlogItem[] = [
 
     <h1>Architecture of federated learning</h1>
 
-    <p><img src="../public/img/Federated/architecture.png" alt="architecture" style="display: block; margin: 0 auto; max-width:60%; height:auto;"></p>
+    <p><img src="../../img/Federated/architecture.png" alt="architecture" style="display: block; margin: 0 auto; max-width:60%; height:auto;"></p>
 
     <p>The architecture of federated learning typically consists of three main components: the client
     devices, the central server, and the machine learning model.</p>
@@ -1454,7 +1454,7 @@ export const blogItems: BlogItem[] = [
 
     <h2>Federated Transfer Learning (FTL)</h2>
 
-    <p><img src="../public/img/Federated/FTL.png" alt="FTL" style="display: block; margin: 0 auto; max-width:60%; height:auto;"></p>
+    <p><img src="../../img/Federated/FTL.png" alt="FTL" style="display: block; margin: 0 auto; max-width:60%; height:auto;"></p>
 
     <p>Federated transfer learning is suitable while two datasets differ not only just in sample size but also in feature space. Consider a bank in China and an e-commerce firm in the United States as two separate entities. The small overlap between the user populations of the two institutions is due to geographical constraints. However, only a tiny fraction of the feature space from both companies overlaps as a result of the distinct enterprises. For example, transfer-learning may be used to generate solutions of problems for the full dataset and features under a federation. Specifically, a typical portrayal across the 2 feature spaces is learnt by applying restricted general sample sets as well as then used to produce prediction results for samples with just one-sided features. There are challenges that FTL addresses that cannot be addressed by current federated learning methods, which is why it is an essential addition to the field.</p>
 
@@ -1462,7 +1462,7 @@ export const blogItems: BlogItem[] = [
 
     <h3>Vertical Federated Learning</h3>
 
-    <p><img src="../public/img/Federated/VFL.png" alt="VFL" style="display: block; margin: 0 auto; max-width:60%; height:auto;"></p>
+    <p><img src="../../img/Federated/VFL.png" alt="VFL" style="display: block; margin: 0 auto; max-width:60%; height:auto;"></p>
 
     <p>Machine-learning techniques for vertically partitioned data have been suggested that preserve privacy, including gradient descent, classification, secure linear regression, association rule mining, and cooperative statistical analysis. Some studies have presented a VFL method for training a logistic regression model that preserves individual privacy. The authors investigated entity resolution and learning performance, utilizing Taylor approximation to approximate gradient and loss functions for privacy-preserving computations.</p>
 
@@ -1474,7 +1474,7 @@ export const blogItems: BlogItem[] = [
 
     <h3>Horizontal Federated Learning</h3>
 
-    <p><img src="../public/img/Federated/HFL.png" alt="HFL" style="display: block; margin: 0 auto; max-width:60%; height:auto;"></p>
+    <p><img src="../../img/Federated/HFL.png" alt="HFL" style="display: block; margin: 0 auto; max-width:60%; height:auto;"></p>
 
     <p>HFL can be applied in scenarios in which datasets at different sites share overlapping feature space but differ in sample space as illustrated in the figure below. It resembles the situation that data is horizontally partitioned inside a tabular view. For example, two regional banks may have very different user groups from their respective regions, and the intersection set of their users is very small. However, their business models are very similar. Hence, the feature spaces
     of their datasets are the same. Formally, we summarize the conditions for HFL as:</p>
@@ -1570,10 +1570,10 @@ export const blogItems: BlogItem[] = [
 
     <div class="section">
       <h2>What is GAN model?</h2>
-      <img src="../public/img/3D/globalGANModel.png" alt="Global GAN Model">
+      <img src="../../img/3D/globalGANModel.png" alt="Global GAN Model">
       <p><strong>GAN</strong> is a machine learning model in which two <strong>neural networks</strong> compete with each other by using <em>deep learning</em> methods to become more accurate in their predictions. GANs typically run unsupervised and use a cooperative <em>zero-sum game framework</em> to learn, where one person's gain equals another person's loss.</p>
       <p>GANs consist of two models: the <strong>generative model</strong> and the <strong>discriminator model</strong>. The generator creates fake data resembling training data, while the discriminator classifies data as real or fake. They compete until the generator produces realistic data.</p>
-      <img src="../public/img/3D/GANProcess.png" alt="GAN Process" style="display: block; margin: 0 auto; max-width:60%; height:auto;">
+      <img src="../../img/3D/GANProcess.png" alt="GAN Process" style="display: block; margin: 0 auto; max-width:60%; height:auto;">
     </div>
 
     <div class="section">
@@ -1585,11 +1585,11 @@ export const blogItems: BlogItem[] = [
       </ul>
       <blockquote><em>The goal of the generator is to fool the discriminator, while the discriminator aims to correctly identify fake data.</em></blockquote>
       <p>The keep compete between each other until at the end fakes (generator by generator) look real (discriminator can’t differentiate).</p>
-      <img src="../public/img/3D/GANDiagram.png" alt="GAN Diagram">
+      <img src="../../img/3D/GANDiagram.png" alt="GAN Diagram">
       <p>We notice that what we input to generator is Noise, why? Noise in this scenario, we can think about it as random small number vector. When we vary the noise on each run(training), it helps ensure that generator will generate different image on the same class on the same class based on the data that feed into discriminator and got feed back to the generator.</p>
-      <img src="../public/img/3D/noiseGenerator.png" alt="Noise Generator" style="display: block; margin: 0 auto; max-width:70%; height:auto;">
+      <img src="../../img/3D/noiseGenerator.png" alt="Noise Generator" style="display: block; margin: 0 auto; max-width:70%; height:auto;">
       <p>Then, generate will likely generate the object that are common to find features in the dataset. For example, 2 ears with round eye of cat rather with common color rather than sphinx cat image that might pretty be rare in the dataset.</p>
-      <img src="../public/img/3D/ganNetwork.png" alt="GAN Network" style="display: block; margin: 0 auto; max-width:70%; height:auto;">
+      <img src="../../img/3D/ganNetwork.png" alt="GAN Network" style="display: block; margin: 0 auto; max-width:70%; height:auto;">
       <p>
       The generator model generated images from <strong>random noise(z)</strong> and then learns how to generate realistic images.
       Random noise which is input is sampled using uniform or normal distribution and then it is fed into the generator which generated an image.
@@ -1609,14 +1609,14 @@ export const blogItems: BlogItem[] = [
 
       <p>(1) <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL (Kullback–Leibler) divergence</a> measures how one probability distribution <em><strong>p</strong></em> diverges from a second expected probability distribution <strong><em>q</em></strong>.</p>
 
-      <img src="../public/img/3D/form1.jpg" alt="GAN Network" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+      <img src="../../img/3D/form1.jpg" alt="GAN Network" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
       <p>D(KL) achieves the minimum zero when <strong><em>p(x) == q(x)</em></strong> everywhere. It is noticeable according to the formula that KL divergence is asymmetric. In cases where <strong><em>p(x)</em></strong> is close to zero, but <strong><em>q(x)</em></strong> is significantly non-zero, the <strong><em>q’s</em></strong> effect is disregarded. It could cause buggy results when we just want to measure the similarity between two equally important distributions.</p>
 
       <p>(2) <a href="https://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence">Jensen–Shannon Divergence</a> is another measure of similarity between two probability distributions, bounded by [0,1]. JS divergence is symmetric and more smooth. <br>
-      <img src="../public/img/3D/graph_KL.png" alt="graph KL" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
+      <img src="../../img/3D/graph_KL.png" alt="graph KL" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
 
-      <img src="../public/img/3D/form2.jpg" alt="graph KL" style="max-width:50%; height:auto;" /></p>
+      <img src="../../img/3D/form2.jpg" alt="graph KL" style="max-width:50%; height:auto;" /></p>
 
       <p>Some believe (<a href="https://arxiv.org/pdf/1511.05101.pdf">Huszar, 2015</a>) that one reason behind GANs’ big success is switching the loss function from asymmetric KL divergence in traditional maximum-likelihood approach to symmetric JS divergence.</p>
 
@@ -1656,12 +1656,12 @@ export const blogItems: BlogItem[] = [
       <p>Now let's look at the Wasserstein distance metric. She would tell you how much <strong>work</strong> is required to turn one distribution into another. In our example, this would mean how much effort you would have to put into transforming the distribution of numbers produced by your generator into the actual distribution of numbers. If the two distributions are very different, that would mean it would take a lot of work to make them similar.</p>
 
       <p>To illustrate this, imagine that the actual distribution of numbers is a bell-shaped curve centered around 100. Your generator, on the other hand, mainly produces numbers between 0 and 10. The Wasserstein distance metric could tell you how many earth would need to be moved to transform the flat line between 0 and 10 into a curve of 100. The higher the Wasserstein distance metric, the more work would be required to perform this transformation. Look at the following figure to visualize what i am saying. <br>
-      <img src="../public/img/3D/Wasserstein1.png" alt="wasserstein" /></p>
+      <img src="../../img/3D/Wasserstein1.png" alt="wasserstein" /></p>
 
       <h1>Types of GAN models</h1>
 
       <h2>Deep Convolutional Generative Adversial Network</h2>
-      <img src="../public/img/3D/DCGAN.png" alt="noise generator" />
+      <img src="../../img/3D/DCGAN.png" alt="noise generator" />
 
       <p>DCGAN stands for Deep Convolutional Generative Adversarial Network. It is a type of GAN that uses convolutional layers in both the generative and discriminative models.</p>
 
@@ -1669,24 +1669,24 @@ export const blogItems: BlogItem[] = [
 
       <p>The overall loss function for a DCGAN is defined as the sum of the loss functions for G and D. The loss function for G is defined as:</p>
 
-      <img src="../public/img/3D/form1.jpg" alt="noise generator" style="display: block; margin: 0 auto; max-width:50%; height:auto;" />
+      <img src="../../img/3D/form1.jpg" alt="noise generator" style="display: block; margin: 0 auto; max-width:50%; height:auto;" />
 
       <p>This loss function encourages G to produce synthetic images that are classified as real by D. In other words, it encourages G to generate images that are similar to the real images in the training data.</p>
 
       <p>The loss function for D is defined as:</p>
 
-      <img src="../public/img/3D/form2.jpg" alt="noise generator" style="display: block; margin: 0 auto; max-width:50%; height:auto;" />
+      <img src="../../img/3D/form2.jpg" alt="noise generator" style="display: block; margin: 0 auto; max-width:50%; height:auto;" />
 
       <p>This loss function encourages D to correctly classify real images as real and synthetic images as fake. In other words, it encourages D to accurately differentiate between real and fake images.</p>
 
       <p>The overall loss function for the DCGAN is then defined as:</p>
 
-      <img src="../public/img/3D/form3.jpg" alt="noise generator" style="display: block; margin: 0 auto; max-width:50%; height:auto;" />
+      <img src="../../img/3D/form3.jpg" alt="noise generator" style="display: block; margin: 0 auto; max-width:50%; height:auto;" />
 
       <p>This loss function is minimized during training by updating the weights of G and D using gradient descent. By minimizing this loss function, the DCGAN learns to generate high-quality synthetic images that are similar to the real images in the training data.</p>
 
       <h2>Wasserstein GAN</h2>
-      <img src="../public/img/3D/Wasserstein.png" alt="noise generator" />
+      <img src="../../img/3D/Wasserstein.png" alt="noise generator" />
 
       <p><strong>Wasserstein GANs (WGANs)</strong> are a type of Generative Adversarial Network (GAN) that use the Wasserstein distance (also known as the Earth Mover’s distance) as a measurement between the generated and real data distributions, providing several advantages over traditional GANs, which include improved stability and more reliable gradient information.</p>
 
@@ -1700,7 +1700,7 @@ export const blogItems: BlogItem[] = [
 
       <h2>CycleGANs</h2>
 
-      <img src="../public/img/3D/CycleGan.png" alt="noise generator" />
+      <img src="../../img/3D/CycleGan.png" alt="noise generator" />
 
       <p>CycleGANs are a Generative Adversarial Network (GAN) used for image-to-image translation tasks, such as converting an image from one domain to another. Unlike traditional GANs, CycleGANs do not require paired training data, making them more flexible and easier to apply in real-world settings.</p>
 
@@ -1759,7 +1759,7 @@ export const blogItems: BlogItem[] = [
     This is what allows RNNs to efficiently analyze data like sentences or music, where the order of words/sounds is important. Rather than seeing everything separately, the RNN understands how each part fits together.
     Thanks to their dynamic internal memory, RNNs are today widely used in language and speech processing by machines. It is one of the key tools to teach them to communicate better with us. The figure below represent a global architecture of RNN where x, h, o are the input sequence, hidden state and output sequence respectively. U, V and W are the training weights.</p>
 
-    <img src="../public/img/transformer/RNN.png" alt="RNN Architecture">
+    <img src="../../img/transformer/RNN.png" alt="RNN Architecture">
 
     <p>However, they face a limitation called the <strong>vanishing gradient problem</strong>. Indeed, when an RNN processes the elements of a sequence one after the other, the influence of the first elements analyzed tends to fade over time. It's as if the network has more and more difficulty remembering the beginning of the sequence as it goes on. Then, <strong>LSTM</strong> model come to resolve it.</p>
 
@@ -1767,7 +1767,7 @@ export const blogItems: BlogItem[] = [
 
     <p>LSTM is a specific type of RNN architecture that addresses the vanishing gradient problem, which occurs when training deep neural networks. LSTMs leverage memory cells and gates to selectively store and retrieve information over long sequences, making them effective at capturing long-term dependencies. The figure blow shows a memory cell architecture of LSTM model:</p>
 
-    <img src="../public/img/transformer/LSTM.png" alt="LSTM Architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+    <img src="../../img/transformer/LSTM.png" alt="LSTM Architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
     <p>LSTMs have a <strong>memory cell</strong> allowing them to better manage long-term dependencies. This memory cell is made up of three <strong>gates</strong>:</p>
 
@@ -1780,11 +1780,11 @@ export const blogItems: BlogItem[] = [
     <p>These gates regulate the flow of information inside the memory cell, thus making it possible to control what information is remembered and what information is forgotten. This gives LSTM the ability to remember important information over long sequences and ignore less relevant material. $h_t$ is the usual hidden state of RNNs but in LSTM networks we add a second state called $c_t$. Here, $h_t$ represents the neuron's short memory (previous word) and $c_t$ represents the long-term memory (all the previous words history).</p>
 
     <h3>Forget gate</h3>
-    <img src="../public/img/transformer/porte-doubli-LSTM.gif" alt="Forget Gate">
+    <img src="../../img/transformer/porte-doubli-LSTM.gif" alt="Forget Gate">
     <p>This gate decides what information must be kept or discarded: the information from the previous hidden state is concatenated to the input data (for example the word "des" vectorized) then the sigmoid function is applied to it in order to normalize the values between 0 and 1. If the output of the sigmoid is close to 0, this means that we must forget the information and if it is close to 1 then we must memorize it for the rest.</p>
 
     <h3>Input gate</h3>
-    <img src="../public/img/transformer/inputGate.gif" alt="Input Gate">
+    <img src="../../img/transformer/inputGate.gif" alt="Input Gate">
     <p>The role of the entry gate is to extract information from the current data (the word “des” for example): we will apply in parallel a sigmoid to the two concatenated data (see previous gate) and a tanh.</p>
     <ul>
         <li>Sigmoid (on the blue circle) will return a vector for which a coordinate close to 0 means that the coordinate in the equivalent position in the concatenated vector is not important. Conversely, a coordinate close to 1 will be deemed “important” (i.e. useful for the prediction that the LSTM seeks to make).</li>
@@ -1793,12 +1793,12 @@ export const blogItems: BlogItem[] = [
     </ul>
 
     <h3>Cell state</h3>
-    <img src="../public/img/transformer/cellState.gif" alt="Cell State">
+    <img src="../../img/transformer/cellState.gif" alt="Cell State">
     <p>We talk about the state of the cell before approaching the last gate (output gate), because the value calculated here is used in it.
     The state of the cell is calculated quite simply from the oblivion gate and the entry gate: first we multiply the exit from oblivion coordinate by coordinate with the old state of the cell. This makes it possible to forget certain information from the previous state which is not used for the new prediction to be made. Then, we add everything (coordinate to coordinate) with the output of the input gate, which allows us to record in the state of the cell what the LSTM (among the inputs and the previous hidden state) has deemed relevant.</p>
 
     <h3>Output gate</h3>
-    <img src="../public/img/transformer/outputGate.gif" alt="Output Gate">
+    <img src="../../img/transformer/outputGate.gif" alt="Output Gate">
     <p>Last step: the output gate must decide what the next hidden state will be, which contains information about previous inputs to the network and is used for predictions.
     To do this, the new state of the cell calculated just before is normalized between -1 and 1 using tanh. The concatenated vector of the current input with the previous hidden state passes, for its part, into a sigmoid function whose goal is to decide which information to keep (close to 0 means that we forget, and close to 1 that we will keep this coordinate of the state of the cell).
     All this may seem like magic in the sense that it seems like the network has to guess what to retain in a vector on the fly, but remember that a weight matrix is ​​applied as input. It is this matrix which will, concretely, store the fact that such information is important or not based on the thousands of examples that the network will have seen!</p>
@@ -1808,7 +1808,7 @@ export const blogItems: BlogItem[] = [
     Self-attention allows the model to weigh the importance of different input tokens when making predictions, enabling it to capture long-range dependencies without the need for sequential processing. Transformers consist of encoder and decoder layers, employing multi-head self-attention mechanisms and feed-forward neural networks.
     The figure below shows the architecture of a Transformer network:</p>
 
-    <img src="../public/img/transformer/The-transformer-model-architecture.png" alt="Transformer Architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+    <img src="../../img/transformer/The-transformer-model-architecture.png" alt="Transformer Architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
     <h2>From LSTM to transformers</h2>
 
@@ -1831,7 +1831,7 @@ export const blogItems: BlogItem[] = [
 
     <h3>Transformer architecture of GPT model</h3>
 
-    <img src="../public/img/transformer/transformer_GPT.png" alt="GPT Architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
+    <img src="../../img/transformer/transformer_GPT.png" alt="GPT Architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;">
 
     <p>In this diagram, the data flows from the bottom to the top, as is traditional in Transformer illustrations. Initially, our input tokens undergo several encoding steps:</p>
     <ul>
@@ -1925,7 +1925,7 @@ There are many ways to encode the positions of tokens. For example, we could imp
 
     <p>The <strong>DecoderLayer</strong> class that we clone has the following architecture:</p>
 
-    <img src="../public/img/transformer/decoderLayer.png" alt="Decoder Layer">
+    <img src="../../img/transformer/decoderLayer.png" alt="Decoder Layer">
     <p>Here’s the corresponding code:</p>
     <pre><code class="language-python">
     class DecoderLayer(nn.Module): 
@@ -1979,7 +1979,7 @@ There are many ways to encode the positions of tokens. For example, we could imp
 
     <p>The multi-headed attention section in the previous diagram can be expanded into the following architecture:</p>
 
-    <p><img src="../public/img/transformer/selfAttention.png" alt="multi-headed self-attention" style="display: block; margin: 0 auto; max-width:60%; height:auto;"></p>
+    <p><img src="../../img/transformer/selfAttention.png" alt="multi-headed self-attention" style="display: block; margin: 0 auto; max-width:60%; height:auto;"></p>
 
     <p>Each multi-head attention block is made up of four consecutive levels:</p>
 
@@ -2077,7 +2077,7 @@ There are many ways to encode the positions of tokens. For example, we could imp
     <p>Generally, separate content from style in natural images is still an extremely difficult problem. However, the recent advance of DCNNs has produced powerful computer vision systems that learn to extract high-level semantic information from natural images. Therefore, we can extract the style and content from one image to another.</p>
     <p>Transferring the style from one image to another is a problem of <strong>texture transfer</strong>. In texture transfer, the goal is to synthetize a texture from a source image while constraining the texture synthesis in order to preserve the semantic content of a target image.</p>
     <p>For texture synthesis, there exist a large range of powerful non-parametric algorithms that can synthetize photorealistic natural textures by resampling the pixels of a given source texture. Therefore, a fundamental prerequisite is to find image representations that independently model variations in the semantic image content and the style in which is presented.</p>
-    <p><img src="../public/img/NeuralStyleTrans/styleNeuralNetResult1.png" alt="Style Neural Network results"></p>
+    <p><img src="../../img/NeuralStyleTrans/styleNeuralNetResult1.png" alt="Style Neural Network results"></p>
     <p>As we can see, the generated image is having the content of the <em><strong>Content image and style image</strong></em>. This above result cannot be obtained by overlapping the image. So the main question are: <em><strong>What is neural style transfer? how we make sure that the generated image has the content and style of the image?  how we capture the content and style of respective images?</strong></em></p>
 
     <h1>What is neural style transfer?</h1>
@@ -2110,11 +2110,11 @@ There are many ways to encode the positions of tokens. For example, we could imp
     <p>Thus, the VGG model acts as a complex feature extractor between the input layer (where the image is fed), and the output layer (which produces the final result). To achieve style transfer, we focus on the middle layers of the model that capture essential information about the content and style of the input images.</p>
     <p>During the style transfer process, the input image is transformed into representations that emphasize image content rather than specific pixel values.</p>
     <p>Features extracted from upper layers of the model are more closely related to the image content. To obtain a representation of the style from a reference image, we analyze the correlation between the different filter responses in the model.</p>
-    <p><img src="../public/img/NeuralStyleTrans/neuralArchitecture.png" alt="Style Neural Network results" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></p>
+    <p><img src="../../img/NeuralStyleTrans/neuralArchitecture.png" alt="Style Neural Network results" style="display: block; margin: 0 auto; max-width:50%; height:auto;"></p>
     <p><em><strong>Neural Style Transfer architecture diagram according to V7Labs</strong></em></p>
 
     <h3>How CNN capture features in VGG model?</h3>
-    <p><img src="../public/img/NeuralStyleTrans/CNN_architecture.png" alt="Style Neural Network results"></p>
+    <p><img src="../../img/NeuralStyleTrans/CNN_architecture.png" alt="Style Neural Network results"></p>
     <p>The VGG model is actually a type of CNN. VGG, which stands for Visual Geometry Group, is a very popular CNN architecture widely used in computer vision tasks, especially in the field of image classification. The VGG model is composed of several stacked convolutional layers, followed by fully connected layers. These convolutional layers are responsible for extracting visual features from images.</p>
     <p>Specifically, VGG's convolutional layers are designed to analyze visual patterns at different spatial scales. Each convolutional layer uses filters that are applied to images to detect specific patterns, such as edges, textures or shapes.</p>
     <p>The figure shows an exemple of CNN layers of VGG model. The first convolutional layers of VGG (those at level 1 with 32 filters) capture low-level features, such as simple edges and textures, while the deeper convolutional layers (those at level 2 with 64 filters) capture features of higher level like complex shapes and overall structures.</p>
@@ -2127,7 +2127,7 @@ There are many ways to encode the positions of tokens. For example, we could imp
     <p>In this equation, <code>F<sup>l</sup><sub>ij</sub>(x)</code> represents the feature representation of the generated image x at layer l and <code>P<sup>l</sup><sub>ij</sub>(p)</code> represents the representation of characteristics of the content image p at layer l.</p>
 
     <h3>Style loss</h3>
-    <p><img src="../public/img/NeuralStyleTrans/styleLoss.png" alt="Style Neural Network results"></p>
+    <p><img src="../../img/NeuralStyleTrans/styleLoss.png" alt="Style Neural Network results"></p>
     <p><strong>Style loss</strong> is a bit more complicated that content loss because style is hard to define exactly. It is not possible to simply compare the features like patterns, contours, shapes of the two images to obtain the style loss. We need to find the <strong>correlation</strong> between features. That is why we use another tool called: <strong>Gram matrix</strong>. The Gram matrix then captures the correlations between style characteristics. It measures how visual patterns co-occur in the image (colors, textures). More precisely, each case of the Gram matrix corresponds to the scalar product between two column vectors of the feature matrix. This allows you to obtain a signature of the image style in the form of a matrix.</p>
     <p>The Gram matrix has 2 specificities:</p>
     <ul>
