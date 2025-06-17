@@ -14,6 +14,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
+  base: '/DPBAPortfolio/',
   site: 'https://dreys-bot.github.io/DPBAPortfolio/', // Mets bien l'URL ici
   trailingSlash: 'always',
   vite: {
