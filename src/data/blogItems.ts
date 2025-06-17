@@ -26,7 +26,7 @@ export const blogItems: BlogItem[] = [
   {
     id: 'webgl',
     slug: 'transformers',
-    image: '../../img/CNNTrans/Transformers.jpg',
+    image: `${import.meta.env.BASE_URL}img/CNNTrans/Transformers.jpg`,
     alt: 'WebGL Blog',
     tag: 'AI',
     date: 'march 25, 2025',
@@ -51,7 +51,7 @@ export const blogItems: BlogItem[] = [
       <p>Next, let’s dive deeper into how this groundbreaking architecture works.</p>
 
       <h2>The <strong>Transformer Architecture</strong></h2>
-      <p><img src="../../img/CNNTrans/transfArchi.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
+      <p><img src=`${import.meta.env.BASE_URL}img/CNNTrans/transfArchi.jpg` alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
       <h3>Overview</h3>
       <p>Originally designed for tasks like <strong>machine translation</strong>, <strong>Transformers</strong> are highly effective at converting input sequences into output sequences. They are the first model to rely entirely on the <strong>self-attention mechanism</strong>, without using <strong>RNNs</strong> or <strong>convolutional networks</strong>. However, they still maintain the classic <strong>encoder-decoder</strong> structure.</p>
       <p>If we think of the <strong>Transformer</strong> as a black box for translation, it takes a sentence in one language — say, English — and translates it into another language, like Spanish.</p>
@@ -63,10 +63,10 @@ export const blogItems: BlogItem[] = [
       <p>In reality, both the <strong>encoder</strong> and <strong>decoder</strong> are made up of multiple stacked layers, all with the same structure. Each <strong>encoder layer</strong> processes the input and passes it to the next one. On the <strong>decoder</strong> side, each layer takes input from both the last <strong>encoder layer</strong> and the previous <strong>decoder layer</strong>.</p>
       <p>In the original <strong>Transformer</strong> model, there were 6 layers for the <strong>encoder</strong> and 6 layers for the <strong>decoder</strong>, but this number (N) can be adjusted as needed.</p>
       <p>Now that we have a general idea of the Transformer architecture, let’s dive deeper into how the encoders and decoders work.</p>
-      <p><img src="../../img/CNNTrans/encDecWorflow.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
+      <p><img src=`${import.meta.env.BASE_URL}img/CNNTrans/encDecWorflow.jpg` alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
 
       <h2><strong>Encoder Workflow</strong></h2>
-      <p><img src="../../img/CNNTrans/encworkflow.png" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
+      <p><img src=`${import.meta.env.BASE_URL}img/CNNTrans/encworkflow.png` alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
       <p><strong>Transformers</strong> are currently the basis for many advances in <strong>natural language processing (NLP)</strong>. They have enabled models such as <strong>BERT</strong>, <strong>GPT</strong>, and <strong>T5</strong> to achieve impressive results. At the heart of these models is the <strong>Transformer encoder</strong>, which transforms input data (such as sentences) into <strong>machine-readable information</strong>.</p>
 
       <p>In this section, we will simply explain the key elements that make up this encoder: <strong>embeddings</strong> (which transform words into numbers), <strong>positional coding</strong> (which indicates word order), <strong>self-attention</strong> (which allows the model to know which words are important), <strong>normalization</strong> and <strong>residual connections</strong> (which help stabilize learning), and finally the <strong>feed-forward layer</strong> (which processes the information before moving on to the next step).</p>
@@ -276,7 +276,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '../img/hero.jpg',
+      image: '../../img/hero.jpg',
       alt: 'Mark Thomson',
     },
     relatedArticles: [{ id: '3d' }, { id: 'ar' }],
@@ -594,7 +594,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '../img/hero.jpg',
+      image: '../../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'webgl' }, { id: 'ar' }],
@@ -907,7 +907,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '../img/hero.jpg',
+      image: '../../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'ai' }, { id: 'microservices' }],
@@ -1073,7 +1073,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '../img/hero.jpg',
+      image: '../../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'webgl' }, { id: '3d' }],
@@ -1179,7 +1179,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '../img/hero.jpg',
+      image: '../../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'serverless' }, { id: 'ai' }],
@@ -1384,7 +1384,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '../img/hero.jpg',
+      image: '../../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'serverless' }, { id: 'ai' }],
@@ -1540,7 +1540,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '../img/hero.jpg',
+      image: '../../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'serverless' }, { id: 'ai' }],
@@ -1721,7 +1721,7 @@ export const blogItems: BlogItem[] = [
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '../img/hero.jpg',
+      image: '../../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'serverless' }, { id: 'ai' }],
@@ -2052,7 +2052,7 @@ There are many ways to encode the positions of tokens. For example, we could imp
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '../img/hero.jpg',
+      image: '../../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'serverless' }, { id: 'ai' }],
@@ -2164,7 +2164,7 @@ There are many ways to encode the positions of tokens. For example, we could imp
     author: {
       name: 'Djoupe Audrey',
       role: 'Full-Stack Futurist',
-      image: '../img/hero.jpg',
+      image: '../../img/hero.jpg',
       alt: 'Djoupe_Audrey',
     },
     relatedArticles: [{ id: 'serverless' }, { id: 'ai' }],
