@@ -293,7 +293,7 @@ export const blogItems: BlogItem[] = [
     title: 'Recurrent Neural Networks uncovered — The power of memory in deep learning',
     description:
       'Deep learning has transformed many fields. RNNs, useful for sequential data, are enhanced by LSTM and GRU. Transformers are now the standard for efficiently processing complex sequences.',
-    href: '/blogs/rnn',
+    href: `${import.meta.env.BASE_URL}blogs/rnn`,
     color: 'neon-purple',
     readTime: '6 min read',
     content: `
