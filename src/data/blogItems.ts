@@ -33,7 +33,7 @@ export const blogItems: BlogItem[] = [
     title: 'From Loops to Lightning - How Transformers Outran RNNs',
     description:
       'This article gives an in-depth overview of the Transformer architecture, which has revolutionized natural language processing. It focuses on attention blocks, the key component of the model that establishes parallel and contextual connections between words in a sentence',
-    href: '/blogs/transformers',
+    href: `${import.meta.env.BASE_URL}/blogs/transformers`,
     color: 'neon-cyan',
     readTime: '5 min read',
     content: `
@@ -51,7 +51,7 @@ export const blogItems: BlogItem[] = [
       <p>Next, let’s dive deeper into how this groundbreaking architecture works.</p>
 
       <h2>The <strong>Transformer Architecture</strong></h2>
-      <p><img src="../public/img/CNNTrans/transfArchi.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
+      <p><img src="../../img/CNNTrans/transfArchi.jpg" alt="architecture" style="display: block; margin: 0 auto; max-width:50%; height:auto;" /></p>
       <h3>Overview</h3>
       <p>Originally designed for tasks like <strong>machine translation</strong>, <strong>Transformers</strong> are highly effective at converting input sequences into output sequences. They are the first model to rely entirely on the <strong>self-attention mechanism</strong>, without using <strong>RNNs</strong> or <strong>convolutional networks</strong>. However, they still maintain the classic <strong>encoder-decoder</strong> structure.</p>
       <p>If we think of the <strong>Transformer</strong> as a black box for translation, it takes a sentence in one language — say, English — and translates it into another language, like Spanish.</p>
