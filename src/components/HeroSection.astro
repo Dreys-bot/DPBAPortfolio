@@ -3,6 +3,7 @@ import ColoredText from './ColoredText.astro';
 import ProfileCard from './ui/ProfileCard.astro';
 import Button from './ui/Button.astro';
 
+
 export interface HeroType {
   label: string;
   title: string;
@@ -34,7 +35,7 @@ const heroData: HeroType = {
   profile: {
     name: 'DJOUPE Audrey',
     title: 'Data Scientist',
-    image: '/img/hero.jpg',
+    image: `${import.meta.env.BASE_URL}images/hero.jpg`,
   },
   techStack: ['Computer V.', 'ML', 'NLP', 'DL'],
 };
